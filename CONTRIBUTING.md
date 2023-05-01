@@ -41,6 +41,9 @@ Next.js Beta Docs의 대부분의 카테고리에 대하여 이미 md 파일이 
 
 ex : API_Reference/useParams.md를 작업하고있다면 API_Reference/useParamsImages/image1.png와 같은 형식
 
+3. 모든 문서의 최상단에는 그에 대응하는 docs로 연결되는 link가 있어야합니다.
+
+4. 각 이미지에 대해 
 
 ### PullRequest
 
