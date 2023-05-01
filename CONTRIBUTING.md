@@ -14,8 +14,10 @@ Next.js beta docs 번역 프로젝트에 기여해주셔서 감사합니다.
 
 먼저 레포지토리를 fork한 뒤 작업을 수행할 branch를 생성해주세요
 
+branch를 반드시 생성하고 branch 내부에서 작업해주세요
+
 ```
-git checkout -b 325-add-japanese-translations
+git checkout -b my-branch
 ```
 
 branch 이름은 의미있는 이름일수록 좋습니다!
