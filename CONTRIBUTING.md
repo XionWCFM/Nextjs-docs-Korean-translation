@@ -14,8 +14,10 @@ Next.js beta docs 번역 프로젝트에 기여해주셔서 감사합니다.
 
 먼저 레포지토리를 fork한 뒤 작업을 수행할 branch를 생성해주세요
 
+branch를 반드시 생성하고 branch 내부에서 작업해주세요
+
 ```
-git checkout -b 325-add-japanese-translations
+git checkout -b my-branch
 ```
 
 branch 이름은 의미있는 이름일수록 좋습니다!
@@ -39,6 +41,9 @@ Next.js Beta Docs의 대부분의 카테고리에 대하여 이미 md 파일이 
 
 ex : API_Reference/useParams.md를 작업하고있다면 API_Reference/useParamsImages/image1.png와 같은 형식
 
+3. 모든 문서의 최상단에는 그에 대응하는 docs로 연결되는 link가 있어야합니다.
+
+4. 각 이미지에 대해 
 
 ### PullRequest
 
