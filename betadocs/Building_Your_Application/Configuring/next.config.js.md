@@ -1,3 +1,5 @@
+원본 링크 : https://beta.nextjs.org/docs/api-reference/next-config
+
 # next.config.js
 
 Next.js는 next.config.js 파일을 프로젝트 디렉토리의 루트에 위치시키면 해당 파일을 통해 구성될 수 있습니다.
