@@ -1,0 +1,6 @@
+### [useParams](./API_Reference/Client_Component_Hooks/useParams.md)
+### [usePathname](./API_Reference/Client_Component_Hooks/usePathname.md)
+### [useRouter](./API_Reference/Client_Component_Hooks/useRouter.md)
+### [useSearchParams](./API_Reference/Client_Component_Hooks/useSearchParams.md)
+### [useSelectedLayoutSegment](./API_Reference/Client_Component_Hooks/useSelectedLayoutSegment.md)
+### [useSelectedLayoutSegments](./API_Reference/Client_Component_Hooks/useSelectedLayoutSegments.md)
