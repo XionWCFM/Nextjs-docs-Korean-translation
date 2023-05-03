@@ -67,7 +67,7 @@ Next.js Edge Runtime은 표준 Web API를 기반으로하며 다음 API를 지�
 |[`encodeURIComponent `](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/encodeURIComponent)|일부 문자열 인스턴스를 대체하여 문자의 UTF-8 인코딩을 나타내는 하나, 두 개, 세 개 또는 네 개의 이스케이프 시퀀스로 대체하여 URI 구성 요소를 인코딩합니다.
 |[`Error `](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error)|문을 실행하거나 속성에 액세스할 때 오류가 발생하는 경우 오류를 나타냅니다.
 |[`EvalError `](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/EvalError)|전역 함수 `eval()`과 관련된 오류가 발생할 때 오류를 나타냅니다.
-|[Float32Array `](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array)|32비트 부동 소수점 숫자의 타입 배열을 나타냅니다.
+|[`Float32Array `](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array)|32비트 부동 소수점 숫자의 타입 배열을 나타냅니다.
 |[`Float64Array `](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float64Array)| 64비트 부동 소수점 숫자의 타입 배열을 나타냅니다.
 |[`Function`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)|함수를 나타냅니다.
 |[`Infinity `](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Infinity)|수학적인 무한대 값을 나타냅니다.
@@ -154,7 +154,9 @@ export const config = {
 
 하지만 이러한 문이 Edge에서 실행되면 *런타임 오류를 발생시켜 예외를 던집니다.* 주의해야 합니다.
 
+🔗 [원본 Edge Runtime](https://beta.nextjs.org/docs/api-reference/edge)
 <br/>
+
 
 [< Client Component Hooks: usePathname](../Client_Component_Hooks/useParams.md)
  | [Route Segment Config Options >]((../Segement_Config_Options/Segment_Config_Options.md))
