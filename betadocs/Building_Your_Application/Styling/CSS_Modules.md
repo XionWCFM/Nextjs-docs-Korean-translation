@@ -41,3 +41,7 @@ Next.js에는 스타일 추가 작성 환경을 개선하기 위한 추가 기�
 - next dev를 실행할 때, 로컬 스타일시트(글로벌 또는 CSS Modules)는 [Fast Refresh](https://nextjs.org/docs/basic-features/fast-refresh) 를 활용하여 편집 내용이 저장됨과 동시에 즉시 변경 사항이 반영됩니다.
 - next build로 프로덕션용 빌드를 만들 때, CSS 파일은 더 적은 수의 최소화된 .css 파일로 번들링 되어 스타일을 검색하는데 필요한 네트워크 요청 수를 줄입니다.
 - JavaScript를 비활성화해도 프로덕션 빌드 (next start)에서 여전히 스타일이 로드됩니다. 그러나  [Fast Refresh](https://nextjs.org/docs/basic-features/fast-refresh) 를 사용하려면 여전히 JavaScript가 필요하며, next dev를 실행해야 합니다.
+
+[Data Fetching: API Routes](../Data_Fetching/API_Routes.md)
+
+[Tailwind CSS](./Tailwind_CSS.md)
