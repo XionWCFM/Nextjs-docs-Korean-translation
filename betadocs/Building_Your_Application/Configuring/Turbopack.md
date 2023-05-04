@@ -27,3 +27,7 @@ next dev --turbo
 ## 지원되는 기능
 
 현재 터보팩에서 지원하는 기능에 대해 자세히 알아보려면 [문서](https://turbo.build/pack/docs/features)를 참조하십시오.
+
+[Typescript](./TypeScript.md)
+
+[ESLint](./ESLint.md)

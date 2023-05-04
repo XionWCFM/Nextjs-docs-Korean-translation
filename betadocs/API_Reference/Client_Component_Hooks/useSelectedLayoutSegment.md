@@ -1,4 +1,4 @@
-# useSelectedLayoutSegment
+# `useSelectedLayoutSegment`
 
 `useSelectedLayoutSegment`는 호출된 Layout **한 단계 아래**의 라우트 세그먼트를 읽을 수 있는 클라이언트 컴포넌트 훅입니다.
 

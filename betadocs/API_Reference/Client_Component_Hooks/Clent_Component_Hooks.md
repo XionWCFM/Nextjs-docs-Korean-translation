@@ -1,1 +1,0 @@
-### [useParams](./useParams.md)
