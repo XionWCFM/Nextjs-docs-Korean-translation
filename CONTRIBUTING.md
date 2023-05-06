@@ -1,4 +1,4 @@
-## Contributing
+# Contributing
 
 Next.js beta docs 번역 프로젝트에 기여해주셔서 감사합니다.
 
@@ -9,42 +9,64 @@ Next.js beta docs 번역 프로젝트에 기여해주셔서 감사합니다.
 (추후 작업 파트에 대한 내용은 깃허브 이슈로 개설할 예정이지만 아직 실현되지 않았습니다.)
 
 
+<br>
+<br>
 
-### Fork & create a branch
+## Fork & create a branch
 
-먼저 레포지토리를 fork한 뒤 작업을 수행할 branch를 생성해주세요
+먼저 레포지토리를 fork한 뒤 main 브랜치에서 작업하시거나
 
-branch를 반드시 생성하고 branch 내부에서 작업해주세요
+작업을 수행할 branch를 생성한 뒤 작업해주세요
+
+만약 브랜치를 생성하여 작업하고 싶다면 명령어는 다음과 같습니다.
 
 ```
 git checkout -b my-branch
 ```
 
+
 branch 이름은 의미있는 이름일수록 좋습니다!
 
-Next.js Beta Docs의 대부분의 카테고리에 대하여 이미 md 파일이 만들어져있습니다.
+Next.js Docs의 대부분의 카테고리에 대하여 이미 md 파일이 만들어져있습니다.
 
 자신이 번역 하고자 하는 문서에 매칭되는 md 파일에서 번역을 진행해주시면 됩니다.
 
-  
-### Translation rules
 
-1. 공식문서에 서술되지않은 내용은 역주의 의견으로 취급합니다. 
+<br>
+<br>
 
-> 역주의 의견은 이 markdown 문법을 이용하여 서술합니다. >를 이용해 사용할 수 있어요
 
-2. 공식문서에 포함되어있는 이미지는 반드시 첨부하며 번역을 진행해주세요
+## Upstream & push
 
-이미지는 자신이 작업하고 있는 문서 이름으로 문서와 동일한 깊이에서 폴더를 생성하여 넣어주세요
 
-이때 폴더이름은 작업하는문서+Images로 통일합니다.
+[upstream이 뭔가요?](https://pers0n4.io/github-remote-repository-and-upstream/)
 
-ex : API_Reference/useParams.md를 작업하고있다면 API_Reference/useParamsImages/image1.png와 같은 형식
+[upstream을 하는 방법](https://coding-groot.tistory.com/80)
 
-3. 모든 문서의 최상단에는 그에 대응하는 docs로 연결되는 link가 있어야합니다.
 
-4. 각 이미지에 대해 
+<br>
+<br>
 
-### PullRequest
+
+## PullRequest
 
 번역을 마쳤다면 push 한 뒤 pull request 요청을 보내세요
+
+각자 자신이 맡은 파트만 번역하는 레포지토리의 특성상
+
+충돌이 발생할 우려는 적지만
+
+기본적으로 upstream후 PR을 권장드립니다.
+
+
+<br>
+
+# Translation rules
+
+
+번역 컨벤션 및 용어는 다음 링크에서 확인해주세요!
+
+컨벤션 제작에 힘써주신 [이선아](https://github.com/Doyu-Lee)님 감사합니다.
+
+[Next.js Docs 번역 용어 및 기타 컨벤션 정리](https://docs.google.com/spreadsheets/d/1_ZozdC6EU0cd2BJ5UdT6hboaRQzdq1IQ8Gr9FA28MrU/edit?usp=sharing)
+

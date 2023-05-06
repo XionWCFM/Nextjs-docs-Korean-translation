@@ -2,14 +2,12 @@
 # Nextjs-docs-Korean-translation
 ## Next.js 한글 문서
 
-[Next.js Beta Docs](https://beta.nextjs.org/docs)와 [Next.js docs](https://nextjs.org/docs)를 번역하는 프로젝트입니다.
 
-
+본문서에서는 [Next.js Docs](https://nextjs.org/docs) 를 한글로 번역하는 프로젝트를 진행중입니다.
 
 번역에 참여하실 분은 해당 레포에서 참여해주세요
 
 기여와 관련된 내용은  [Contribution Guidelines](CONTRIBUTING.md)을 참고해주세요
-
 
 
 
