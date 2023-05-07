@@ -79,16 +79,172 @@
 
 
 
+### File Conventions 
 
-### File Conventions
+<details>
+<summary>Metadata</summary>
+<div markdown="1">
 
+[favicon.ico_apple-icon.jpg_and_icon.jpg](./nextjsdocs/APIReference/FileConventions/Metadata/favicon.ico_apple-icon.jpg_and_icon.jpg.md)
 
+[opengraph-image.js_and_twitter-image.js](./nextjsdocs/APIReference/FileConventions/Metadata/opengraph-image.js_and_twitter-image.js.md)
+
+[robots.txt](./nextjsdocs/APIReference/FileConventions/Metadata/robots.txt.md)
+
+[sitemap.xml](./nextjsdocs/APIReference/FileConventions/Metadata/sitemap.xml.md)
+
+</div>
+</details>
+
+[default.js](./nextjsdocs/APIReference/FileConventions/default.js.md)
+
+[error.js](./nextjsdocs/APIReference/FileConventions/error.js.md)
+
+[layout.js](./nextjsdocs/APIReference/FileConventions/layout.js.md)
+
+[loading.js](./nextjsdocs/APIReference/FileConventions/loading.js.md)
+
+[not-found.js](./nextjsdocs/APIReference/FileConventions/not-found.js.md)
+
+[page.js](./nextjsdocs/APIReference/FileConventions/page.js.md)
+
+[route.js](./nextjsdocs/APIReference/FileConventions/route.js.md)
+
+[Route_Segement_Config.js](./nextjsdocs/APIReference/FileConventions/Route_Segement_Config.md)
+
+[template.js](./nextjsdocs/APIReference/FileConventions/template.js.md)
+
+<br>
 
 ### Functions
+[cookies](./nextjsdocs/APIReference/Functions/cookies.md)
+
+[draftMode](./nextjsdocs/APIReference/Functions/draftMode.md)
+
+[fetch](./nextjsdocs/APIReference/Functions/fetch.md)
+
+[generateMetadata](./nextjsdocs/APIReference/Functions/generateMetadata.md)
+
+[generateStaticParams](./nextjsdocs/APIReference/Functions/generateStaticParams.md)
+
+[headers](./nextjsdocs/APIReference/Functions/headers.md)
+
+[imageResponse](./nextjsdocs/APIReference/Functions/imageResponse.md)
+
+[NextRequest](./nextjsdocs/APIReference/Functions/NextRequest.md)
+
+[NextResponse](./nextjsdocs/APIReference/Functions/NextResponse.md)
+
+[notFound](./nextjsdocs/APIReference/Functions/notFound.md)
+
+[redirect](./nextjsdocs/APIReference/Functions/redirect.md)
+
+[revalidatePath](./nextjsdocs/APIReference/Functions/revalidatePath.md)
+
+[revalidateTag](./nextjsdocs/APIReference/Functions/revalidateTag.md)
+
+[useParams](./nextjsdocs/APIReference/Functions/useParams.md)
+
+[usePathname](./nextjsdocs/APIReference/Functions/usePathname.md)
+
+
+[useReportWebVitals](./nextjsdocs/APIReference/Functions/useReportWebVitals.md)
+
+[useRouter](./nextjsdocs/APIReference/Functions/useRouter.md)
+
+[useSeartchParams](./nextjsdocs/APIReference/Functions/useSeartchParams.md)
+
+[useSelectedLayoutSegment](./nextjsdocs/APIReference/Functions/useSelectedLayoutSegment.md)
+
+[useSelectedLayoutSegments](./nextjsdocs/APIReference/Functions/useSelectedLayoutSegments.md)
+
+<br>
+
+
+### next.config.js Options ///-->
+[appDir](./nextjsdocs/APIReference/next.config.jsOptions/appDir.md)
+
+[assetPrefix](./nextjsdocs/APIReference/next.config.jsOptions/assetPrefix.md)
+
+[basePath](./nextjsdocs/APIReference/next.config.jsOptions/basePath.md)
+
+[compress](./nextjsdocs/APIReference/next.config.jsOptions/compress.md)
+
+[devlndicators](./nextjsdocs/APIReference/next.config.jsOptions/devlndicators.md)
+
+[distDir](./nextjsdocs/APIReference/next.config.jsOptions/distDir.md)
+
+[env](./nextjsdocs/APIReference/next.config.jsOptions/env.md)
+
+[eslint](./nextjsdocs/APIReference/next.config.jsOptions/eslint.md)
+
+[exportPathMap](./nextjsdocs/APIReference/next.config.jsOptions/exportPathMap.md)
+
+
+[generateBuildld](./nextjsdocs/APIReference/next.config.jsOptions/generateBuildld.md)
+
+
+[generateEtages](./nextjsdocs/APIReference/next.config.jsOptions/generateEtages.md)
+
+
+[headers](./nextjsdocs/APIReference/next.config.jsOptions/headers.md)
+
+
+[httpAgentOptions](./nextjsdocs/APIReference/next.config.jsOptions/httpAgentOptions.md)
+
+
+[images](./nextjsdocs/APIReference/next.config.jsOptions/images.md)
+
+[mdxRs](./nextjsdocs/APIReference/next.config.jsOptions/mdxRs.md)
+
+[onDemandEntries](./nextjsdocs/APIReference/next.config.jsOptions/onDemandEntries.md)
+
+[output](./nextjsdocs/APIReference/next.config.jsOptions/output.md)
+
+[pageExtensions](./nextjsdocs/APIReference/next.config.jsOptions/pageExtensions.md)
+
+
+[poweredByHeader](./nextjsdocs/APIReference/next.config.jsOptions/poweredByHeader.md)
+
+[productionBrowserSourceMaps](./nextjsdocs/APIReference/next.config.jsOptions/productionBrowserSourceMaps.md)
+
+[reactStrictMode](./nextjsdocs/APIReference/next.config.jsOptions/reactStrictMode.md)
+
+[redirects](./nextjsdocs/APIReference/next.config.jsOptions/redirects.md)
+
+[rewrited](./nextjsdocs/APIReference/next.config.jsOptions/rewrited.md)
+
+
+[serverComponentsExternalPackages](./nextjsdocs/APIReference/next.config.jsOptions/serverComponentsExternalPackages.md)
+
+[serverRuntimeConfig_and_publicRuntimeConfig](./nextjsdocs/APIReference/next.config.jsOptions/serverRuntimeConfig_and_publicRuntimeConfig.md)
+
+[trailingSlash](./nextjsdocs/APIReference/next.config.jsOptions/trailingSlash.md)
+
+[transpilePackages](./nextjsdocs/APIReference/next.config.jsOptions/transpilePackages.md)
+
+[turbo](./nextjsdocs/APIReference/next.config.jsOptions/turbo.md)
+
+[typedRoutes](./nextjsdocs/APIReference/next.config.jsOptions/typedRoutes.md)
+
+[typescript](./nextjsdocs/APIReference/next.config.jsOptions/typescript.md)
+
+[urllmports](./nextjsdocs/APIReference/next.config.jsOptions/urllmports.md)
+
+
+[webpack](./nextjsdocs/APIReference/next.config.jsOptions/webpack.md)
+
+[webVitalsAttribution](./nextjsdocs/APIReference/next.config.jsOptions/webVitalsAttribution.md)
 
 
 
-### next.config.js Options
+<br>
+
+[create-next-app](./nextjsdocs/APIReference/create-next-app.md)
+
+[Edge_Runtime](./nextjsdocs/APIReference/Edge_Runtime.md)
+
+[Next.jsCLI](./nextjsdocs/APIReference/Next.jsCLI.md)
 
 
 
@@ -137,6 +293,8 @@
 [Static and Dynamic](./nextjsdocs/BuildingYourApplication/Rendering/Static_and_Dynamic.md)
 
 [Edge and Node.js Runtimes](./nextjsdocs/BuildingYourApplication/Rendering/Edge_and_Node.js_Runtimes.md)
+
+<br>
 
 ### Data Fetching
 
