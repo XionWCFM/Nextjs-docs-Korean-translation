@@ -67,7 +67,7 @@
 
 [Link](./nextjsdocs/APIReference/Components/Link.md)
 
-[Scripts](./nextjsdocs/APIReference/Components/Scripts.md)
+[Scripts](./nextjsdocs/APIReference/Components/Script.md)
 
 
 <br>
