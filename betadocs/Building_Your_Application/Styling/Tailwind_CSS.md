@@ -92,7 +92,3 @@ export default function Page() {
 ## \***\*Turbopack과 함께 사용 (Usage with Turbopack)\*\***
 
 Next.js 13.1 부터 [Turbopack](https://turbo.build/pack/docs/features/css#tailwind-css)에서 Tailwind CSS 및 PostCSS가 지원됩니다.
-
-[CSS Modules](./CSS_Modules.md)
-
-[Global Styles](./Global_Styles.md)
