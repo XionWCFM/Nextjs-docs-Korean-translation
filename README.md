@@ -161,7 +161,7 @@
 <br>
 
 
-### next.config.js Options ///-->
+### next.config.js Options
 [appDir](./nextjsdocs/APIReference/next.config.jsOptions/appDir.md)
 
 [assetPrefix](./nextjsdocs/APIReference/next.config.jsOptions/assetPrefix.md)
