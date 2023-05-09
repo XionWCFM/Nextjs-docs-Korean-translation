@@ -1,6 +1,6 @@
 # useParams API Reference
 
-<p>원본 url : https://nextjs.org/docs/app/api-reference/functions/use-params</p>
+<p>공식 문서 : https://nextjs.org/docs/app/api-reference/functions/use-params</p>
 
 `useParams` 는 현재 URL 경로의 [동적 매개변수(dynamic params)](../../BuildingYourApplication/Routing/Defining_Routes.md#dynamic-segments)를 읽을 수 있게 해주는 클라이언트 컴포넌트 훅입니다.
 
@@ -32,7 +32,7 @@ const params = useParams();
 
 `useParams` 는 어떠한 매개변수도 가지지 않습니다.
 
-#####
+##### Returns
 
 `useParams` 는 현재 경로의 [동적 매개변수(dynamic parameters)](../../BuildingYourApplication/Routing/Defining_Routes.md#dynamic-segments)를 포함하는 객체를 반환합니다.
 

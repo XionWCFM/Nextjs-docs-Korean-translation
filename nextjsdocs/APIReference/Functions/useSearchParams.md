@@ -1,6 +1,6 @@
 # useSearchParams API Reference
 
-<p>원본 url : https://nextjs.org/docs/app/api-reference/functions/use-search-params</p>
+<p>공식 문서 : https://nextjs.org/docs/app/api-reference/functions/use-search-params</p>
 
 `useSearchParams`는 현재 url의 쿼리 문자열(queary string)을 읽을 수 있는 클라이언트 컴포넌트 훅입니다.
 `useSearchParams`는 [`URLSearchParms`](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams) 인터페이스의 읽기 전용 버전을 반환합니다.
@@ -164,7 +164,7 @@ export default function Page() {
 ##### Layouts
 
 페이지와 달리 [레이아웃](../../APIReference/FileConventions/layout.js.md)(서버 컴포넌트)은 [`searchParams` prop](../../APIReference/FileConventions/page.js.md#searchparams-optional)을 받지 않습니다.
-[탐색 중에 공유 레이아웃이 다시 렌더링되지 않아](../../BuildingYourApplication/Routing/) 탐색 간에 오래된 `searchParams` 가 발생할 수 있기 때문입니다. [자세한 설명](../../APIReference/FileConventions/layout.js.md#good-to-know)을 참고하세요.
+[탐색 중에 공유 레이아웃이 다시 렌더링되지 않아](../../BuildingYourApplication/Routing/Routing.md) 탐색 간에 오래된 `searchParams` 가 발생할 수 있기 때문입니다. [자세한 설명](../../APIReference/FileConventions/layout.js.md#good-to-know)을 참고하세요.
 
 - 대신 클라이언트 컴포넌트에서 Page의 [`searchParams` prop](../../APIReference/FileConventions/page.js.md#searchparams-optional)이나  [`useSearchParams`](./useSeartchParams.md) 훅을 사용하세요. 이렇게 하면 최신 `searchParams` 로 클라이언트에서 다시 렌더링됩니다.
 
