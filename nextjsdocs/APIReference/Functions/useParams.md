@@ -32,7 +32,7 @@ const params = useParams();
 
 `useParams` 는 어떠한 매개변수도 가지지 않습니다.
 
-#####
+##### Returns
 
 `useParams` 는 현재 경로의 [동적 매개변수(dynamic parameters)](../../BuildingYourApplication/Routing/Defining_Routes.md#dynamic-segments)를 포함하는 객체를 반환합니다.
 
