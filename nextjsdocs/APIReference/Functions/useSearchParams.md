@@ -1,6 +1,6 @@
 # useSearchParams API Reference
 
-<p>원본 url : https://nextjs.org/docs/app/api-reference/functions/use-search-params</p>
+<p>공식 문서 : https://nextjs.org/docs/app/api-reference/functions/use-search-params</p>
 
 `useSearchParams`는 현재 url의 쿼리 문자열(queary string)을 읽을 수 있는 클라이언트 컴포넌트 훅입니다.
 `useSearchParams`는 [`URLSearchParms`](https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams) 인터페이스의 읽기 전용 버전을 반환합니다.

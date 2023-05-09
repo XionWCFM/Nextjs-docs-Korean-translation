@@ -1,6 +1,6 @@
 # useRouter API Reference
 
-<p>원본 url : https://nextjs.org/docs/app/api-reference/functions/use-router</p>
+<p>공식 문서 : https://nextjs.org/docs/app/api-reference/functions/use-router</p>
 
 `useRouter` 훅을 사용하여 클라이언트 컴포넌트 내에서 프로그래밍 방식으로 경로를 변경할 수 있습니다.
 
