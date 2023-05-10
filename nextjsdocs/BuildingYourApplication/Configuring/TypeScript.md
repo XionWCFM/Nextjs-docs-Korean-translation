@@ -213,3 +213,11 @@ module.exports = {
   },
 };
 ```
+
+## Version Changes
+
+|Version|Changes|
+|---|---| 
+v13.2.0|정적으로 타입이 지정된 링크는 베타 버전에서 사용 가능합니다.
+v12.0.0|[SWC](https://nextjs.org/docs/architecture/nextjs-compiler)는 이제 TypeScript 및 TSX를 더 빠르게 빌드하기 위해 기본적으로 사용됩니다.
+v10.2.1|`tsconfig.json`에서 활성화할 경우 [Incremental type checking](https://www.typescriptlang.org/tsconfig#incremental) 지원이 추가되었습니다.
