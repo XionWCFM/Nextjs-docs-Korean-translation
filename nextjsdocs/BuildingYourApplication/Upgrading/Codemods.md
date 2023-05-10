@@ -93,7 +93,7 @@ export default function Home() {
 }
 ```
 
-#### **새로운 이미지(Image) 컴포넌트로 이전**
+#### **새로운 이미지 컴포넌트로 이전**
 
 ```bash
 npx @next/codemod@latest next-image-experimental ./pages
@@ -107,13 +107,13 @@ npx @next/codemod@latest next-image-experimental ./pages
 - `lazyBoundary` prop을 제거합니다.
 - `lazyRoot` prop을 제거합니다.
 
-#### **링크(Link) 컴포넌트로부터 `<a>` 태그 제거**
+#### **링크 컴포넌트로부터 `<a>` 태그 제거**
 
 ```bash
 npx @next/codemod@latest new-link ./pages
 ```
 
-[링크(Link) 컴포넌트](https://nextjs.org/docs/app/api-reference/components/link) 내부의 `<a>` 태그를 제거하거나 자동으로 수정할 수 없는 링크에 대해 legacyBehavior prop을 추가합니다.
+[링크 컴포넌트](https://nextjs.org/docs/app/api-reference/components/link) 내부의 `<a>` 태그를 제거하거나 자동으로 수정할 수 없는 링크에 대해 legacyBehavior prop을 추가합니다.
 
 예시 :
 
@@ -196,7 +196,7 @@ export default class Home extends React.Component {
 
 ### **9**
 
-#### **익명 컴포넌트(Anonymous Component)를 명명된 컴포넌트(Named Component)로 변환**
+#### **익명 컴포넌트를 명명된 컴포넌트로 변환**
 
 ```bash
 npx @next/codemod name-default-component
