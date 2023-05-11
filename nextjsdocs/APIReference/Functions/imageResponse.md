@@ -1,3 +1,5 @@
+공식문서 : https://nextjs.org/docs/app/api-reference/functions/image-response
+
 # **imageResponse API 참조**
 `ImageResponse` 생성자를 사용하면 JSX 및 CSS를 사용하여 동적 이미지를 생성할 수 있습니다. 이는 Open Graph 이미지, 트위터 카드 등의 소셜 미디어 이미지를 생성하는 데 유용합니다.
 
