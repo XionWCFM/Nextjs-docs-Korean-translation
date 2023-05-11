@@ -1,3 +1,5 @@
+공식문서 : https://nextjs.org/docs/app/api-reference/edge
+
 # **Edge Runtime**
 Next.js Edge Runtime은 표준 Web API를 기반으로하며 다음 API를 지원합니다.
 
