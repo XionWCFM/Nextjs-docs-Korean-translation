@@ -1,10 +1,14 @@
 원본링크 : [https://nextjs.org/docs/app/api-reference/next-config-js/headers#header-overriding-behavior](https://nextjs.org/docs/app/api-reference/next-config-js/headers#header-overriding-behavior)
 
-# \***\*headers\*\***
+<br>
+
+# **headers**
 
 ### **Examples**
 
 - [Headers](https://github.com/vercel/next.js/tree/canary/examples/headers)
+
+<br>
 
 ### **Version History**
 
@@ -50,9 +54,13 @@ module.exports = {
 
 헤더는 페이지 및 `/public` 파일을 포함하는 파일 시스템보다 먼저 검사됩니다.
 
+<br>
+
 ---
 
-## [Header Overriding Behavior](https://nextjs.org/docs/app/api-reference/next-config-js/headers#header-overriding-behavior)
+<br>
+
+## [**Header Overriding Behavior**](https://nextjs.org/docs/app/api-reference/next-config-js/headers#header-overriding-behavior)
 
 두 헤더가 동일한 경로와 일치하고 동일한 헤더 키를 설정한 경우 마지막 헤더 키가 첫 번째 헤더 키를 재정의합니다. 아래 헤더를 사용하면 `/hello` 경로의 경우 설정된 마지막 헤더 값이 `world`이므로 헤더 `x-hello`가 `world`가 됩니다.
 
@@ -83,11 +91,15 @@ module.exports = {
 };
 ```
 
+<br>
+
 ---
 
-## [Path Matching](https://nextjs.org/docs/app/api-reference/next-config-js/headers#path-matching)
+<br>
 
-경로 일치가 허용됩니다 (예: `/blog/:slug`는 `/blog/hello-world`와 일치합니다(중첩된 경로 없음):
+## [**Path Matching**](https://nextjs.org/docs/app/api-reference/next-config-js/headers#path-matching)
+
+경로 일치가 허용됩니다 (예: `/blog/:slug`는 `/blog/hello-world`와 일치합니다(중첩된 경로 없음)):
 
 ```jsx
 module.exports = {
@@ -111,7 +123,9 @@ module.exports = {
 };
 ```
 
-### [Wildcard Path Matching](https://nextjs.org/docs/app/api-reference/next-config-js/headers#wildcard-path-matching)
+<br>
+
+### [**Wildcard Path Matching**](https://nextjs.org/docs/app/api-reference/next-config-js/headers#wildcard-path-matching)
 
 와일드카드 경로를 일치시키려면 매개변수 뒤에 `*`를 사용할 수 있습니다(예: `/blog/:slug*`는 `/blog/a/b/c/d/hello-world`와 일치합니다):
 
@@ -137,7 +151,9 @@ module.exports = {
 };
 ```
 
-### [Regex Path Matching](https://nextjs.org/docs/app/api-reference/next-config-js/headers#regex-path-matching)
+<br>
+
+### [**Regex Path Matching**](https://nextjs.org/docs/app/api-reference/next-config-js/headers#regex-path-matching)
 
 정규식 경로를 일치시키려면 매개변수 뒤에 괄호로 정규식을 묶으면 됩니다(예: `/blog/:slug(\\d{1,})`는 `/blog/123`과 일치하지만 `/blog/abc`와는 일치하지 않습니다):
 
@@ -180,9 +196,13 @@ module.exports = {
 };
 ```
 
+<br>
+
 ---
 
-## [Header, Cookie, and Query Matching](https://nextjs.org/docs/app/api-reference/next-config-js/headers#header-cookie-and-query-matching)
+<br>
+
+## [**Header, Cookie, and Query Matching**](https://nextjs.org/docs/app/api-reference/next-config-js/headers#header-cookie-and-query-matching)
 
 헤더, 쿠키 또는 쿼리 값이 `has` 필드와 일치하거나 `missing`된 필드와 일치하지 않는 경우에만 헤더를 적용하는 방법을 사용할 수 있습니다. 헤더를 적용하려면 `source` 및 모든 `has` 항목이 일치해야 하며 `missing`된 항목이 모두 일치하지 않아야 합니다.
 
@@ -296,11 +316,15 @@ module.exports = {
 };
 ```
 
+<br>
+
 ---
 
-## [Headers with basePath support](https://nextjs.org/docs/app/api-reference/next-config-js/headers#headers-with-basepath-support)
+<br>
 
-헤더에 `[basePath` 지원](https://nextjs.org/docs/app/api-reference/next-config-js/basePath)을 활용하는 경우 헤더에 `basePath: false`를 추가하지 않는 한 각 `source`에는 자동으로 `basePath`가 접두사로 붙습니다:
+## [**Headers with basePath support**](https://nextjs.org/docs/app/api-reference/next-config-js/headers#headers-with-basepath-support)
+
+헤더에 [`basePath` 지원](https://nextjs.org/docs/app/api-reference/next-config-js/basePath)을 활용하는 경우 헤더에 `basePath: false`를 추가하지 않는 한 각 `source`에는 자동으로 `basePath`가 접두사로 붙습니다:
 
 ```jsx
 module.exports = {
@@ -332,11 +356,15 @@ module.exports = {
 };
 ```
 
+<br>
+
 ---
 
-## [Headers with i18n support](https://nextjs.org/docs/app/api-reference/next-config-js/headers#headers-with-i18n-support)
+<br>
 
-헤더와 함께 `[i18n` 지원](https://nextjs.org/docs/pages/building-your-application/routing/internationalization)을 활용할 때 헤더에 `locale: false`를 추가하지 않는 한 각 `source`는 구성된 `locales`을 처리하도록 자동으로 접두사가 붙습니다. `locale: false`를 사용하는 경우 `source`에 locale을 접두사로 추가해야 올바르게 일치합니다.
+## [**Headers with i18n support**](https://nextjs.org/docs/app/api-reference/next-config-js/headers#headers-with-i18n-support)
+
+헤더와 함께 [`i18n` 지원](https://nextjs.org/docs/pages/building-your-application/routing/internationalization)을 활용할 때 헤더에 `locale: false`를 추가하지 않는 한 각 `source`는 구성된 `locales`을 처리하도록 자동으로 접두사가 붙습니다. `locale: false`를 사용하는 경우 `source`에 locale을 접두사로 추가해야 올바르게 일치합니다.
 
 ```jsx
 module.exports = {
@@ -394,9 +422,13 @@ module.exports = {
 };
 ```
 
+<br>
+
 ---
 
-## [Cache-Control](https://nextjs.org/docs/app/api-reference/next-config-js/headers#cache-control)
+<br>
+
+## [**Cache-Control**](https://nextjs.org/docs/app/api-reference/next-config-js/headers#cache-control)
 
 `res.setHeader` 메서드를 사용하여 [Next.js API Routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes)에서 `Cache-Control` 헤더를 설정할 수 있습니다:
 
@@ -409,13 +441,17 @@ export default function handler(req, res) {
 
 API 경로와 정적 에셋이 효과적으로 캐시되도록 하기 위해 프로덕션 환경에서 덮어쓰기 되므로 `next.config.js` 파일에서 `Cache-Control` 헤더를 설정할 수 없습니다.
 
-[정적으로 생성](https://nextjs.org/docs/pages/building-your-application/routing/pages-and-layouts#static-generation-recommended)된 페이지의 캐시를 `revalidate`해야 하는 경우 페이지의 `[getStaticProps](https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props)` 함수에서 재검증 프로퍼티를 설정하여 재검증할 수 있습니다.
+[정적으로 생성](https://nextjs.org/docs/pages/building-your-application/routing/pages-and-layouts#static-generation-recommended)된 페이지의 캐시를 `revalidate`해야 하는 경우 페이지의 [`getStaticProps`](https://nextjs.org/docs/pages/building-your-application/data-fetching/get-static-props) 함수에서 재검증 프로퍼티를 설정하여 재검증할 수 있습니다.
+
+<br>
 
 ---
 
-## [Options](https://nextjs.org/docs/app/api-reference/next-config-js/headers#options)
+<br>
 
-### [X-DNS-Prefetch-Control](https://nextjs.org/docs/app/api-reference/next-config-js/headers#x-dns-prefetch-control)
+## [**Options**](https://nextjs.org/docs/app/api-reference/next-config-js/headers#options)
+
+### [**X-DNS-Prefetch-Control**](https://nextjs.org/docs/app/api-reference/next-config-js/headers#x-dns-prefetch-control)
 
 이 헤더는 DNS prefetching을 제어하여 브라우저가 외부 링크, 이미지, CSS, JavaScript 등에 대한 도메인 이름 확인을 사전에 수행할 수 있도록 합니다. 이 prefetching은 백그라운드에서 수행되므로 참조된 항목이 필요할 때 [DNS](https://developer.mozilla.org/en-US/docs/Glossary/DNS)가 해결될 가능성이 높습니다. 이렇게 하면 사용자가 링크를 클릭할 때 지연 시간이 줄어듭니다.
 
@@ -426,11 +462,13 @@ API 경로와 정적 에셋이 효과적으로 캐시되도록 하기 위해 프
 }
 ```
 
-### [Strict-Transport-Security](https://nextjs.org/docs/app/api-reference/next-config-js/headers#strict-transport-security)
+<br>
+
+### [**Strict-Transport-Security**](https://nextjs.org/docs/app/api-reference/next-config-js/headers#strict-transport-security)
 
 이 헤더는 브라우저에 HTTP 대신 HTTPS를 통해서만 액세스해야 함을 알립니다. 아래 구성을 사용하면 현재 및 향후 모든 하위 도메인이 `max-age` 2년 동안 HTTPS를 사용하게 됩니다. 이렇게 하면 HTTP를 통해서만 제공될 수 있는 페이지 또는 하위 도메인에 대한 액세스가 차단됩니다.
 
-[Vercel](https://vercel.com/docs/concepts/edge-network/headers#strict-transport-security?utm_source=next-site&utm_medium=docs&utm_campaign=next-website)에 배포하는 경우, `next.config.js`에서 `[headers](https://nextjs.org/docs/pages/api-reference/next-config-js/headers)`를 선언하지 않는 한 모든 배포에 자동으로 추가되므로 이 헤더는 필요하지 않습니다.
+[Vercel](https://vercel.com/docs/concepts/edge-network/headers#strict-transport-security?utm_source=next-site&utm_medium=docs&utm_campaign=next-website)에 배포하는 경우, `next.config.js`에서 [`headers`](https://nextjs.org/docs/pages/api-reference/next-config-js/headers)를 선언하지 않는 한 모든 배포에 자동으로 추가되므로 이 헤더는 필요하지 않습니다.
 
 ```jsx
 {
@@ -439,7 +477,9 @@ API 경로와 정적 에셋이 효과적으로 캐시되도록 하기 위해 프
 }
 ```
 
-### \***\*[X-XSS-Protection](https://nextjs.org/docs/app/api-reference/next-config-js/headers#x-xss-protection)\*\***
+<br>
+
+### [**X-XSS-Protection**](https://nextjs.org/docs/app/api-reference/next-config-js/headers#x-xss-protection)
 
 이 헤더는 반영된 크로스 사이트 스크립팅(XSS) 공격이 감지되면 페이지 로딩을 중지합니다. 사이트에서 인라인 자바스크립트(`'unsafe-inline'`)의 사용을 비활성화하는 강력한 [`Content-Security-Policy`](https://nextjs.org/docs/app/api-reference/next-config-js/headers#content-security-policy)를 구현하는 경우에는 이 보호 기능이 필요하지 않지만, CSP를 지원하지 않는 구형 웹 브라우저를 보호할 수 있습니다.
 
@@ -450,7 +490,9 @@ API 경로와 정적 에셋이 효과적으로 캐시되도록 하기 위해 프
 }
 ```
 
-### \***\*[X-Frame-Options](https://nextjs.org/docs/app/api-reference/next-config-js/headers#x-frame-options)\*\***
+<br>
+
+### [**X-Frame-Options**](https://nextjs.org/docs/app/api-reference/next-config-js/headers#x-frame-options)
 
 이 헤더는 사이트가 `iframe` 내에 표시되도록 허용할지 여부를 나타냅니다. 이를 통해 clickjacking 공격을 방지할 수 있습니다. 이 헤더는 최신 브라우저에서 더 잘 지원되는 CSP의 `frame-ancestors` 옵션으로 대체되었습니다.
 
@@ -461,7 +503,9 @@ API 경로와 정적 에셋이 효과적으로 캐시되도록 하기 위해 프
 }
 ```
 
-### \***\*[Permissions-Policy](https://nextjs.org/docs/app/api-reference/next-config-js/headers#permissions-policy)\*\***
+<br>
+
+### [**Permissions-Policy**](https://nextjs.org/docs/app/api-reference/next-config-js/headers#permissions-policy)
 
 이 헤더를 사용하면 브라우저에서 사용할 수 있는 기능과 API를 제어할 수 있습니다. 이전에는 `Feature-Policy`으로 명명되었습니다. [여기](https://github.com/w3c/webappsec-permissions-policy/blob/main/features.md)에서 전체 권한 옵션 목록을 볼 수 있습니다.
 
@@ -472,7 +516,9 @@ API 경로와 정적 에셋이 효과적으로 캐시되도록 하기 위해 프
 }
 ```
 
-### \***\*[X-Content-Type-Options](https://nextjs.org/docs/app/api-reference/next-config-js/headers#x-content-type-options)\*\***
+<br>
+
+### [**X-Content-Type-Options**](https://nextjs.org/docs/app/api-reference/next-config-js/headers#x-content-type-options)
 
 이 헤더는 `Content-Type` 헤더가 명시적으로 설정되지 않은 경우 브라우저가 콘텐츠 유형을 추측하려고 시도하는 것을 방지합니다. 이렇게 하면 사용자가 파일을 업로드하고 공유할 수 있는 웹사이트에 대한 XSS 익스플로잇을 방지할 수 있습니다. 예를 들어 사용자가 이미지를 다운로드하려고 하는데 실행 파일과 같은 다른 `Content-Type`으로 처리되면 악의적일 수 있습니다. 이 헤더는 브라우저 확장 프로그램 다운로드에도 적용됩니다. 이 헤더에 유효한 유일한 값은 `nosniff`입니다.
 
@@ -483,7 +529,9 @@ API 경로와 정적 에셋이 효과적으로 캐시되도록 하기 위해 프
 }
 ```
 
-### \***\*[Referrer-Policy](https://nextjs.org/docs/app/api-reference/next-config-js/headers#referrer-policy)\*\***
+<br>
+
+### [**Referrer-Policy**](https://nextjs.org/docs/app/api-reference/next-config-js/headers#referrer-policy)
 
 이 헤더는 현재 웹사이트(원본)에서 다른 웹사이트로 이동할 때 브라우저에 포함할 정보의 양을 제어합니다. [여기](https://scotthelme.co.uk/a-new-security-header-referrer-policy/)에서 다양한 옵션에 대해 알아볼 수 있습니다.
 
@@ -494,7 +542,9 @@ API 경로와 정적 에셋이 효과적으로 캐시되도록 하기 위해 프
 }
 ```
 
-### \***\*[Content-Security-Policy](https://nextjs.org/docs/app/api-reference/next-config-js/headers#content-security-policy)\*\***
+<br>
+
+### [**Content-Security-Policy**](https://nextjs.org/docs/app/api-reference/next-config-js/headers#content-security-policy)
 
 이 헤더는 cross-site scripting(XSS), 클릭재킹 및 기타 코드 인젝션 공격을 방지하는 데 도움이 됩니다. Content Security Policy(CSP)는 스크립트, 스타일시트, 이미지, 글꼴, 객체, 미디어(오디오, 비디오), 아이프레임 등을 포함한 콘텐츠의 허용된 출처를 지정할 수 있습니다.
 
@@ -526,7 +576,9 @@ const ContentSecurityPolicy = `
 }
 ```
 
-### **[References](https://nextjs.org/docs/app/api-reference/next-config-js/headers#references)**
+<br>
+
+### [**References**](https://nextjs.org/docs/app/api-reference/next-config-js/headers#references)
 
 - [MDN](https://developer.mozilla.org/)
 - [Varun Naik](https://blog.vnaik.com/posts/web-attacks.html)
