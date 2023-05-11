@@ -131,8 +131,6 @@
 
 [imageResponse](./nextjsdocs/APIReference/Functions/imageResponse.md)
 
-[Metadata](./nextjsdocs/APIReference/Functions/Metadata.md)
-
 [NextRequest](./nextjsdocs/APIReference/Functions/NextRequest.md)
 
 [NextResponse](./nextjsdocs/APIReference/Functions/NextResponse.md)
