@@ -3,7 +3,7 @@
 ## [동적 이미지 생성](#동적-이미지-생성)
 > 요구 사항 : Next.js v12.2.3 이상.
 
-`ImageResponse` 생성자를 사용하면 JSX 및 CSS를 사용하여 동적 이미지를 생성할 수 있습니다. 이것은 Open Graph 이미지, Twitter 카드 등과 같은 소셜 미디어 이미지를 만드는 데 유용합니다.
+`ImageResponse` 생성자를 사용하면 JSX 및 CSS를 사용하여 동적 이미지를 생성할 수 있습니다. 이것은 오픈 그래프 이미지, Twitter 카드 등과 같은 소셜 미디어 이미지를 만드는 데 유용합니다.
 
 <br>
 
@@ -45,7 +45,7 @@ export default function () {
 ```
 
 `ImageResponse`는 [Route Handlers](../Routing/Route_Handlers.md) 및 파일 기반 메타데이터를 포함한 다른 Next.js API와 잘 통합됩니다. 예를 들어, 
-`opengraph-image.tsx` 파일에서 `ImageResponse`를 사용하여 빌드 시간에 또는 요청 시간에 동적으로 Open Graph 이미지를 생성할 수 있습니다.
+`opengraph-image.tsx` 파일에서 `ImageResponse`를 사용하여 빌드 시간에 또는 요청 시간에 동적으로 오픈 그래프 이미지를 생성할 수 있습니다.
 
 <br>
 
@@ -62,7 +62,7 @@ export default function () {
 * `ImageResponse`는 [@vercel/og](https://vercel.com/docs/concepts/functions/edge-functions/og-image-generation), [Satori](https://github.com/vercel/satori) 및 Resvg를 사용하여 HTML 및 CSS를 PNG로 변환합니다.
 * Edge 런타임만 지원됩니다. 기본 Node.js 런타임은 작동하지 않습니다.
 * flexbox 및 CSS 속성의 서브셋만 지원됩니다. 고급 레이아웃(예: display: grid)은 작동하지 않습니다.
-* 최대 번들 크기는 500KB입니다. 번들 크기에는 JSX, CSS, 글꼴, 이미지 및 기타 assets이 포함됩니다. 한도를 초과하면 assets의 크기를 줄이거나 런타임에 불러오는 것을 고려하십시오.
+* 최대 번들 크기는 500KB입니다. 번들 크기에는 JSX, CSS, 글꼴, 이미지 및 기타 자산(assets)이 포함됩니다. 한도를 초과하면 자산의 크기를 줄이거나 런타임에 불러오는 것을 고려하십시오.
 * `ttf`, `otf`, `woff` 글꼴 형식만 지원됩니다. 글꼴 구문 분석 속도를 최대화하려면 `woff`보다는 `ttf` or `otf`가 선호됩니다.
 
 <br><hr><br>
@@ -176,6 +176,8 @@ const jsonLd: WithContext<Product> = {
   description: 'Dynamic at the speed of static.',
 };
 ```
+
+<br><hr><br>
 
 ## [API 참조](#api-참조)
 메타데이터 API 옵션 모두 보기

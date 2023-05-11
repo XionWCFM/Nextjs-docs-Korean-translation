@@ -169,7 +169,7 @@ export default function Page() {
   );
 }
 ```
-
+<br><hr><br>
 ## [API 참조](#api-참조)
 
 next/script API에 대해 자세히 알아보세요.

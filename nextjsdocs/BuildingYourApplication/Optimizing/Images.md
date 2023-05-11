@@ -14,7 +14,7 @@ Next.js 이미지 컴포넌트는 HTML의 <img> 엘리먼트를 확장하여 다
 * __향상된 성능:__ 최신 이미지 형식을 사용하여 각 디바이스에 대한 적절한 크기의 이미지 제공
 * __시각적 안정성:__ 자동으로 [누적 레이아웃 이동(CLS)](https://nextjs.org/learn/seo/web-performance/cls) 방지
 * __더 빠른 페이지 로드:__ 이미지가 뷰포트에 들어갈 때만 로드되며 선택적 blur-up placeholder가 있습니다.
-* __Asset 유연성:__ 원격 서버에 저장된 이미지에 대해서도 필요한 크기로 즉시 이미지 크기 조정
+* __자산(Assets) 유연성:__ 원격 서버에 저장된 이미지에 대해서도 필요한 크기로 즉시 이미지 크기 조정
 
 <br><hr><br>
 
@@ -195,6 +195,8 @@ priority에 대한 자세한 내용은 [next/image 컴포넌트 문서](../../AP
 `next/image` 컴포넌트와 Next.js 이미지 최적화 API는 [`next.config.js` 파일](../../APIReference/next.config.jsOptions/)에서 구성할 수 있습니다. 이러한 구성을 통해 [원격 이미지 활성화](../../APIReference/Components/Image.md)하거나, [사용자 정의 이미지 breakpoints를 정의](../../APIReference/Components/Image.md)하거나, [캐싱 동작 변경](../../APIReference/Components/Image.md) 등을 수행할 수 있습니다.
 
 [__자세한 내용은 전체 이미지 구성 설명서를 참조하십시오.__](../../APIReference/Components/Image.md)
+
+<br><hr><br>
 
 ## [API 참조](#api-참조)
 next/image API에 대하여 더 알아보세요.
