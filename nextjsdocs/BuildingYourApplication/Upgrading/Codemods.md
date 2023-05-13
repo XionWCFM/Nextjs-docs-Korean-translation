@@ -1,5 +1,7 @@
 # **Codemods**
 
+공식 문서 : [https://nextjs.org/docs/app/building-your-application/upgrading/codemods](https://nextjs.org/docs/app/building-your-application/upgrading/codemods)
+
 Codemods는 코드베이스에서 프로그램적으로 실행되는 변환입니다. 이를 통해 모든 파일을 수동으로 검토하지 않아도 대규모 변경사항을 자동으로 적용할 수 있습니다.
 
 Next.js는 API가 업데이트되거나 더 이상 사용되지 않을 때 Next.js 코드베이스를 업그레이드하는 데 도움이 되는 Codemod 변환을 제공합니다.
@@ -16,7 +18,7 @@ npx @next/codemod <transform> <path>
 
 `<transform>`과 `<path>`를 적절한 값으로 대체합니다.
 
-- `transform` - 변환의 이름
+- `transform` - 적용할 transform의 이름
 - `path` - 변환할 파일 또는 디렉토리
 - `--dry` 드라이 런(dry-run)을 실행합니다. 코드는 변경되지 않습니다.
 - `--print` 변경된 결과를 출력하여 비교합니다.
@@ -41,7 +43,7 @@ npx @next/codemod@latest built-in-next-font
 import { Inter } from '@next/font/google';
 ```
 
-다음과 같이 변환합니다:
+다음과 같이 변환합니다.
 
 ```JSX
 import { Inter } from 'next/font/google';
@@ -55,7 +57,7 @@ import { Inter } from 'next/font/google';
 npx @next/codemod@latest next-image-to-legacy-image ./pages
 ```
 
-기존 Next.js 10, 11 또는 12 애플리케이션의 `next/image` import를 Next.js 13의 `next/legacy/image`로 안전하게 변경합니다. 또한 `next/future/image`를 `next/image`로 변경합니다.
+기존 Next.js 10, 11 또는 12 애플리케이션의 `next/image` import를 Next.js 13의 `next/legacy/image`로 안전하게 변환합니다. 또한 `next/future/image`를 `next/image`로 변환합니다.
 
 예시 :
 
@@ -74,7 +76,7 @@ export default function Home() {
 }
 ```
 
-다음과 같이 변환합니다 :
+다음과 같이 변환합니다.
 
 ```JSX
 // pages/index.js
@@ -99,7 +101,7 @@ export default function Home() {
 npx @next/codemod@latest next-image-experimental ./pages
 ```
 
-`next/legacy/image`에서 인라인 스타일을 추가하고 사용하지 않는 props를 제거하여 새로운 `next/image`로 위험하게 이전합니다.
+`next/legacy/image`에 인라인 스타일을 추가하고 사용하지 않는 props를 제거하여 새로운 `next/image`로 위험하게 이전합니다.
 
 - `layout` prop을 제거하고 `style`을 추가합니다.
 - `objectFit` prop을 제거하고 `style`을 추가합니다.
@@ -113,7 +115,7 @@ npx @next/codemod@latest next-image-experimental ./pages
 npx @next/codemod@latest new-link ./pages
 ```
 
-[링크 컴포넌트](https://nextjs.org/docs/app/api-reference/components/link) 내부의 `<a>` 태그를 제거하거나 자동으로 수정할 수 없는 링크에 대해 legacyBehavior prop을 추가합니다.
+[링크 컴포넌트](../../APIReference/Components/Link.md) 내부의 `<a>` 태그를 제거합니다. 자동으로 수정할 수 없는 링크에는 `legacyBehavior` prop을 추가합니다.
 
 예시 :
 
@@ -121,7 +123,7 @@ npx @next/codemod@latest new-link ./pages
 <Link href="/about">
   <a>About</a>
 </Link>
-// transforms into
+// 아래와 같이 변환합니다.
 <Link href="/about">
   About
 </Link>
@@ -129,13 +131,13 @@ npx @next/codemod@latest new-link ./pages
 <Link href="/about">
   <a onClick={() => console.log('clicked')}>About</a>
 </Link>
-// transforms into
+// 아래와 같이 변환합니다.
 <Link href="/about" onClick={() => console.log('clicked')}>
   About
 </Link>
 ```
 
-자동 수정이 적용될 수 없는 경우, legacyBehavior prop이 추가됩니다. 이를 통해 앱은 해당 특정 링크에 대해 이전 동작을 유지하면서 계속 작동할 수 있습니다.
+자동 수정이 적용될 수 없는 경우, `legacyBehavior` prop이 추가됩니다. 이를 통해 앱은 해당 특정 링크에 대해 이전 동작을 유지하면서 계속 작동할 수 있습니다.
 
 ```JSX
 const Component = () => <a>About</a>
@@ -143,7 +145,7 @@ const Component = () => <a>About</a>
 <Link href="/about">
   <Component />
 </Link>
-// becomes
+// 아래와 같이 변환합니다.
 <Link href="/about" legacyBehavior>
   <Component />
 </Link>
@@ -157,7 +159,7 @@ const Component = () => <a>About</a>
 npx @next/codemod cra-to-next
 ```
 
-Create React App 프로젝트를 Next.js로 이전하여 페이지 라우터(Pages Router) 및 필요한 구성을 생성합니다. 초기에는 클라이언트 측 단독 렌더링을 활용하여 SSR 중 `윈도우` 사용으로 인한 호환성 문제를 방지하며, Next.js 특정 기능의 점진적인 적용을 가능하게 하기 위해 원활하게 활성화될 수 있습니다.
+Create React App 프로젝트를 Next.js로 이전하여 페이지 라우터 및 필요한 구성을 생성합니다. 초기에는 클라이언트 측 단독 렌더링을 활용하여 서버 측 렌더링 (SSR) 중 `window` 사용으로 인한 호환성 문제를 방지하며, Next.js 특정 기능의 점진적인 적용을 가능하게 하기 위해 원활하게 활성화될 수 있습니다.
 
 이 변환에 관련된 의견을 [이 토론](https://github.com/vercel/next.js/discussions/25858)에 공유해주세요.
 
@@ -169,7 +171,7 @@ Create React App 프로젝트를 Next.js로 이전하여 페이지 라우터(Pag
 npx @next/codemod add-missing-react-import
 ```
 
-[새로운 JSX 변환](https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html)이 작동하도록 하기 위해 `React`를 import하지 않는 파일에 해당 import를 추가하는 변환입니다.
+[새로운 JSX 변환](https://legacy.reactjs.org/blog/2020/09/22/introducing-the-new-jsx-transform.html)이 작동하도록 하기 위해 `React`를 import하지 않는 파일에 import를 추가하는 변환입니다.
 
 예시 :
 
@@ -182,7 +184,7 @@ export default class Home extends React.Component {
 }
 ```
 
-다음과 같이 변환합니다 :
+다음과 같이 변환합니다.
 
 ```JSX
 // my-component.js
@@ -215,7 +217,7 @@ export default function () {
 }
 ```
 
-다음과 같이 변환합니다 :
+다음과 같이 변환합니다.
 
 ```JSX
 // my-component.js
@@ -224,11 +226,11 @@ export default function MyComponent() {
 }
 ```
 
-컴포넌트는 파일 이름을 기반으로 카멜 케이스로 작성된 이름을 갖게 되며, 화살표 함수에 또한 적용됩니다.
+컴포넌트는 파일 이름을 기반으로 카멜 케이스로 작성된 이름을 가지게 되며, 화살표 함수에도 적용됩니다.
 
 ### **8**
 
-AMP HOC를 페이지 구성으로 변환합니다.
+#### **AMP HOC를 페이지 구성으로 변환합니다.**
 
 ```bash
 npx @next/codemod withamp-to-config
@@ -268,7 +270,7 @@ export const config = {
 npx @next/codemod url-to-withrouter
 ```
 
-상위 페이지의 자동으로 삽입된 `url` 속성을 `withRouter` 및 해당 속성을 삽입하는 `router`로 변환합니다. 자세한 내용은 [https://nextjs.org/docs/messages/url-deprecated](https://nextjs.org/docs/messages/url-deprecated)를 참조하세요.
+위치가 최상위인 페이지에 자동으로 주입되는 `url` 속성이 더 이상 사용되지 않으므로, `withRouter`와 `router` 속성을 사용하도록 바뀌었습니다. 자세한 내용은 [https://nextjs.org/docs/messages/url-deprecated](https://nextjs.org/docs/messages/url-deprecated)를 참조하세요.
 
 예시 :
 
