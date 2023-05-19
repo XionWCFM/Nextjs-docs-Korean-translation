@@ -1,8 +1,8 @@
 # 데이터 가져오기
 
 > **참고사항**
-- 이 새로운 데이터 가져오기 모델은 현재 React 팀에서 개발 중입니다. 서버 컴포넌트에서 `async`와 `await`를 도입하고 클라이언트 컴포넌트를 위한 새로운 `use()` 훅을 소개하는 [support for promises React RFC](https://github.com/acdlite/rfcs/blob/first-class-promises/text/0000-first-class-support-for-promises.md) 문서를 읽는 것을 권장합니다.
-- 실제로 시도해 볼 수는 있지만, 아직 안정화되지 않았습니다. 우리는 최신 개발 동향을 반영하기 위해 이 문서를 업데이트할 예정입니다.
+> - 이 새로운 데이터 가져오기 모델은 현재 React 팀에서 개발 중입니다. 서버 컴포넌트에서 `async`와 `await`를 도입하고 클라이언트 컴포넌트를 위한 새로운 `use()` 훅을 소개하는 [support for promises React RFC](https://github.com/acdlite/rfcs/blob/first-class-promises/text/0000-first-class-support-for-promises.md) 문서를 읽는 것을 권장합니다.
+> - 실제로 시도해 볼 수는 있지만, 아직 안정화되지 않았습니다. 우리는 최신 개발 동향을 반영하기 위해 이 문서를 업데이트할 예정입니다.
 
 React와 Next.js 13에서는 애플리케이션에서 데이터를 가져오고 관리하는 새로운 방법을 소개했습니다. 새로운 데이터 가져오기 시스템은 `app` 디렉토리에서 작동하며 [`fetch()` 웹 API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)를 기반으로 구축되었습니다.
 
@@ -39,9 +39,9 @@ export default async function Page() {
 ```
 
 > **비동기 서버 컴포넌트 타입스크립트 에러**
-- `async` 서버 컴포넌트는 사용된 위치에서 `Promise<Element>'는 유효한 JSX 요소 타입이 아닙니다`라는 오류를 일으킬 수 있습니다.
-- 이는 TypeScript의 알려진 문제로서 현재 수정 작업이 진행 중입니다.
-- 임시 해결책으로 해당 컴포넌트 위에 `{/* @ts-expect-error Async Server Component */}`를 추가하여 해당 컴포넌트의 타입 체크를 비활성화할 수 있습니다.
+> - `async` 서버 컴포넌트는 사용된 위치에서 `Promise<Element>'는 유효한 JSX 요소 타입이 아닙니다`라는 오류를 일으킬 수 있습니다.
+> - 이는 TypeScript의 알려진 문제로서 현재 수정 작업이 진행 중입니다.
+> - 임시 해결책으로 해당 컴포넌트 위에 `{/* @ts-expect-error Async Server Component */}`를 추가하여 해당 컴포넌트의 타입 체크를 비활성화할 수 있습니다.
 
 ### 서버 컴포넌트 함수
 
