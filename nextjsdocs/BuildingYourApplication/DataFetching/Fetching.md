@@ -70,7 +70,7 @@ Next.js는 서버 컴포넌트에서 데이터를 가져올 때 필요한 유용
 fetch('https://...'); // cache: 'force-cache' is the default
 ```
 
-### 데이터 유효성 재검사
+### [데이터 유효성 재검사](https://nextjs.org/docs/app/building-your-application/data-fetching/fetching#revalidating-data)
 
 [캐시된 데이터](https://nextjs.org/docs/app/building-your-application/data-fetching/caching)를 일정 시간 간격으로 유효성 재검사하려면 `fetch()`에서 `next.revalidate` 옵션을 사용하여 리소스의 `cache` 수명(초 단위)을 설정할 수 있습니다.
 
