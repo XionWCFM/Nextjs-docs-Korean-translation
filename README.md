@@ -110,7 +110,7 @@
 
 [route.js](./nextjsdocs/APIReference/FileConventions/route.js.md)
 
-[Route_Segement_Config.js](./nextjsdocs/APIReference/FileConventions/Route_Segement_Config.md)
+[Route_Segment_Config.js](./nextjsdocs/APIReference/FileConventions/Route_Segment_Config.md)
 
 [template.js](./nextjsdocs/APIReference/FileConventions/template.js.md)
 
@@ -261,6 +261,8 @@
 ### Routing
 
 
+[Routing](./nextjsdocs/BuildingYourApplication/Routing/Routing.md)
+
 [Defining Routes](./nextjsdocs/BuildingYourApplication/Routing/Defining_Routes.md)
 
 [Pages and Layouts](./nextjsdocs/BuildingYourApplication/Routing/Pages_and_Layouts.md)
@@ -382,6 +384,8 @@
 ### Upgrading
 
 
+
+[Upgrading](./nextjsdocs/BuildingYourApplication/Upgrading/Upgrading.md)
 
 [Codemods](./nextjsdocs/BuildingYourApplication/Upgrading/Codemods.md)
 
