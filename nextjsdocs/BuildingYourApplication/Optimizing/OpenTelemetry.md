@@ -22,7 +22,7 @@ OpenTelemetry를 활성화하면 `getStaticProps`와 같은 코드를 자동으�
 
 참고: 현재 우리는 OpenTelemetry 바인딩을 서버리스 함수에서만 지원합니다. `엣지(Edge)`나 클라이언트 측 코드에 대해서는 지원하지 않습니다.
 
-<br/>
+---
 
 ### Getting Started
 
@@ -101,7 +101,7 @@ sdk.start();
 이렇게 하면 `@vercel/otel` 을 사용하는 것과 동일하지만 수정하고 확장할 수 있습니다.
 예를 들어, `@opentelemetry/exporter-trace-otlp-http` 대신 `@opentelemetry/exporter-trace-otlp-grpc` 를 사용하거나 추가 리소스 속성을 지정할 수 있습니다.
 
-<br/>
+---
 
 ### Testing your instrumentation
 
@@ -111,7 +111,7 @@ OpenTelemetry 추적을 로컬에서 테스트하려면, 호환되는 백엔드�
 해당 추적(trace)의 다른 모든 span은 그 하위에 중첩됩니다.
 Next.js는 기본적으로 출력되는 span보다 더 많은 span을 추적합니다. 더 많은 span을 보려면 `NEXT_OTEL_VERBOSE=1` 로 설정해야 합니다.
 
-<br/>
+---
 
 ### Deployment
 
@@ -135,7 +135,7 @@ Vercel에서 OpenTelemetry가 기본 설정으로 작동하도록 확인했습�
 
 OpenTelemetry Collector를 사용하는 것을 권장합니다. 그러나 플랫폼에서 사용할 수 없는 경우 [manual OpenTelemetry configuration](#manual-opentelemetry-configuration) 과 함께 사용자 정의 OpenTelemetry exporter를 사용할 수 있습니다.
 
-<br/>
+---
 
 ### Custom Spans
 
@@ -167,7 +167,7 @@ export async function fetchGithubStars() {
 
 `register` 함수는 코드가 새로운 환경에서 실행되기 전에 실행됩니다. 새로운 span을 생성할 수 있으며, 이러한 span은 내보낸 추적(exported trace)에 정확하게 추가될 것으로 예상됩니다.
 
-<br/>
+---
 
 ### Default Spans in Next.js
 
