@@ -7,7 +7,7 @@
 
 ---
 
-###Terminology
+### Terminology
 
 먼저, 문서 전체에서 이러한 용어가 사용됩니다.
 다음을 통해 빠르게 확인하세요.
@@ -128,6 +128,7 @@ Next.js는 중첩된 라우트에서 특정 동작으로 UI를 생성하기 위�
 클라이언트 사이드 라우팅을 사용하는 `page` 디렉터리와 달리, 앱 라우터는 **서버 중심 라우팅**을 사용하여 [서버 컴포넌트](../../GettingStarted/React_Essentials.md##server-components) 및 [서버 데이터 가져오기](../DataFetching/Fetching.md)에 맞춥니다.
 서버 중심 라우팅을 사용하면 클라이언트는 라우트 맵을 다운로드할 필요가 없으며 서버 컴포넌트에 대한 동일한 요청을 사용하여 라우트를 조회할 수 있습니다. 이 최적화는 모든 애플리케이션에 유용하지만 라우트가 많은 애플리케이션에 더 큰 영향을 미칩니다.
 라우팅은 서버 중심이지만 라우터는 [Link 컴포넌트](../Routing/Linking_and_Navigating.md#linking)와 함께 **클라이언트 사이드 네비게이션**을 사용합니다. - 단일 페이지 응용 프로그램의 동작과 유사합니다.
+
 즉 사용자가 새 라우트로 이동할 때, 브라우저가 페이지를 다시 로드하지 않습니다.
 대신, URL이 업데이트되고 Next.js는 [변경된 세그먼트만 렌더링합니다.](../Routing/Routing.md#partial-rendering)
 
@@ -172,37 +173,49 @@ Link 컴포넌트를 사용하는 방법을 알아보려면 [Linking and Navigat
 이제 Next.js에서 라우팅의 기본 사항을 이해했으므로 아래 링크를 따라 첫 번째 라우트를 만드세요.
 
 > [Defining Routes](../Routing/Defining_Routes.md)
+>
 > Next.js에서 첫 번째 경로를 만드는 방법을 알아보세요.
 
 > [Pages and Layouts](../Routing/Pages_and_Layouts.md)
+>
 > 앱 라우터로 첫 페이지와 공유 레이아웃을 만드세요.
 
 > [Linking and Navigating](../Routing/Pages_and_Layouts.md)
+>
 > Next.js에서 navigation이 작동하는 방식과 Link 컴포넌트 및 ‘useRouter’ 훅을 사용하는 방법을 알아보세요.
 
 > [Routes Groups](../Routing/Routes_Groups.md)
+>
 > 라우트 그룹을 사용하여 Next.js 애플리케이션을 여러 섹션으로 분할할 수 있습니다.
 
 > [Dynamic Routes](../Routing/Dynamic_Routes.md)
+>
 > 동적 라우트는 동적 데이터에서 프로그래밍 방식으로 라우트 세그먼트를 생성하는데 사용할 수 있습니다.
 
 > [Loading UI and Streaming](../Routing/Loading_UI_and_Streaming.md)
+>
 > Suspense 위에 구축된 Loading UI를 사용하면 특정 라우트 세그먼트에 대한 폴백을 만들고 준비가 되면 콘텐츠를 자동으로 스트리밍할 수 있습니다.
 
 > [Error Handling](../Routing/Error_Handling.md)
+>
 > React Error Boundary에서 라우트 세그먼트와 중첩된 자식을 자동으로 래핑하여 런타임 오류를 처리합니다.
 
 > [Parallel Routes](../Routing/Parallel_Routes.md)
+>
 > 독립적으로 이동할 수 있는 동일한 보기에서 하나 이상의 페이지를 동시에 렌더링합니다. 매우 동적인 애플리케이션을 위한 패턴입니다.
 
 > [Intercepting Routes](../Routing/Intercepting_Routes.md)
+>
 > 모달과 같은 고급 라우팅 패턴에 유용한 브라우저 URL을 마스킹하는 동안 가로채기 라우트를 사용하여 현재 레이아웃 내에서 새 라우트를 로드합니다.
 
 > [Route Handlers](../Routing/Route_Handlers.md)
+>
 > 웹의 요청 및 응답 API를 사용하여 지정된 라우트에 대한 사용자 지정 요청 핸들러를 만듭니다.
 
 > [Middleware](../Routing/Middleware.md)
+>
 > 요청이 완료되기 전에 미들웨어를 사용하여 코드를 실행하는 방법 알아보기
 
 > [Internationalization](../Routing/Internationalization.md)
+>
 > 다국어 라우팅 및 현지화된 콘텐츠로 여러 언어에 대한 지원을 추가합니다.
