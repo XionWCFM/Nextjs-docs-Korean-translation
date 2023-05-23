@@ -1,4 +1,4 @@
-# Supporyed Browsers
+# Supported Browsers
 
 <br>
 
