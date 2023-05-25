@@ -1,4 +1,4 @@
-# \***\*데이터 가져오기\*\***
+# 데이터 가져오기
 
 Next.js 앱 라우터는 React와 웹 플랫폼 기반으로 구축된 새로운 단순화된 데이터 가져오기 시스템을 소개합니다. 이 페이지에서는 데이터 수명주기를 관리하는 데 도움이 되는 기본 개념과 패턴을 살펴볼 것입니다.
 
@@ -18,7 +18,7 @@ Next.js 앱 라우터는 React와 웹 플랫폼 기반으로 구축된 새로운
 
 Next.js에서 **`fetch`**를 사용하는 방법을 알아보겠습니다.
 
-### **[서버에서 데이터 가져오기](https://nextjs.org/docs/app/building-your-application/data-fetching#fetching-data-on-the-server)**
+## **[서버에서 데이터 가져오기](https://nextjs.org/docs/app/building-your-application/data-fetching#fetching-data-on-the-server)**
 
 가능한 경우에는 **[서버 컴포넌트](https://nextjs.org/docs/getting-started/react-essentials#server-components)**에서 데이터를 가져오는 것을 권장합니다. 서버 컴포넌트는 항상 서버에서 데이터를 가져옵니다. 이를 통해 다음과 같은 이점을 얻을 수 있습니다:
 
@@ -41,7 +41,7 @@ Next.js에서 **`fetch`**를 사용하는 방법을 알아보겠습니다.
 
 컴포넌트 내에서 데이터를 가져올 때, 두 가지 데이터 가져오기 패턴인 "병렬"과 "순차"에 대해 알아야 합니다.
 
-![스크린샷 2023-05-24 오후 5.32.46.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/3b4f6118-5fc8-4fde-9bfa-836bc685842a/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-05-24_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.32.46.png)
+<img src="./asset/DataFetching/parallel_sequential.png">
 
 - **병렬 데이터 가져오기**는 경로(route) 내에서 요청이 즉시 시작되며 데이터를 동시에 로드합니다. 이로 인해 클라이언트-서버 폭포식 효과는 줄어들고 데이터 로드에 걸리는 총 시간이 단축됩니다.
 - **순차 데이터 가져오기**는 경로 내의 요청이 서로 종속되어 워터폴을 형성합니다. 한 번의 가져오기가 다른 결과에 의존하거나 다음 가져오기 전에 조건을 충족시키기 위해 이 패턴을 원하는 경우도 있을 수 있습니다. 그러나 이 동작은 의도하지 않게 발생하여 로딩 시간이 더 오래 걸릴 수도 있습니다.
@@ -52,7 +52,7 @@ Next.js에서 **`fetch`**를 사용하는 방법을 알아보겠습니다.
 
 트리 내에서 여러 컴포넌트에서 동일한 데이터(예: 현재 사용자)를 가져와야 하는 경우, Next.js는 동일한 입력을 가진 fetch 요청(GET)을 자동으로 임시 캐시에 저장합니다. 이 최적화를 통해 렌더링 과정에서 동일한 데이터가 여러 번 가져와지는 것을 방지합니다.
 
-![스크린샷 2023-05-24 오후 5.37.53.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9adac9fa-2205-442b-be32-478345137aeb/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-05-24_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.37.53.png)
+<img src="./asset/DataFetching/request_deduping.png">
 
 - 서버에서는 캐시가 서버 요청의 수명 동안 유지되며 렌더링 프로세스가 완료될 때까지 유지됩니다.
   - 이 최적화는 레이아웃(Layouts), 페이지(Pages), 서버 컴포넌트(Server Components), generateMetadata 및 generateStaticParams에서 이루어지는 fetch 요청에 적용됩니다.
@@ -69,7 +69,7 @@ fetch를 사용할 수 없는 경우, React는 수동으로 데이터를 요청 
 - **정적 데이터**는 자주 변경되지 않는 데이터입니다. 예를 들어, 블로그 글이 있습니다.
 - **동적 데이터**는 자주 변경되거나 사용자에게 특정할 수 있는 데이터입니다. 예를 들어, 쇼핑 카트 목록이 있습니다.
 
-![스크린샷 2023-05-24 오후 5.41.28.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/c21fc922-ea82-4c0e-942a-90b845bf67fd/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-05-24_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.41.28.png)
+<img src="./asset/DataFetching/static_dynamic.png">
 
 기본적으로 Next.js는 자동으로 정적 데이터 가져오기를 수행합니다. 이는 데이터가 빌드 시간에 가져와 캐시되며 각 요청마다 재사용된다는 것을 의미합니다. 개발자로서 정적 데이터가 어떻게 캐시되고 재검증되는지에 대한 제어권을 가지고 있습니다.
 
@@ -86,7 +86,7 @@ fetch를 사용할 수 없는 경우, React는 수동으로 데이터를 요청 
 
 캐싱은 데이터를 저장소(예: **[콘텐츠 전달 네트워크](https://vercel.com/docs/concepts/edge-network/overview)**)에 저장하여 각 요청마다 원본 소스에서 다시 가져오지 않아도 되는 과정입니다.
 
-![스크린샷 2023-05-24 오후 5.43.18.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/a0a2c35d-0e05-4783-8f49-5f68749216cc/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-05-24_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.43.18.png)
+<img src="./asset/DataFetching/caching_data.png">
 
 **Next.js 캐시**는 전역적으로 분산될 수 있는 영속적인 **[HTTP 캐시](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching)**입니다. 이는 캐시가 자동으로 확장되고 플랫폼에 따라 여러 지역에서 공유될 수 있다는 것을 의미합니다(예: **[Vercel](https://vercel.com/docs/concepts/next.js/overview)**).
 
@@ -115,7 +115,7 @@ Next.js는 두 가지 유형의 재검증을 제공합니다:
 
 서버 컴포넌트와 **[중첩된 레이아웃](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts)**을 사용하면 데이터가 필요하지 않은 페이지의 일부를 즉시 렌더링하고, 데이터를 가져오는 페이지의 일부에는 **[로딩 상태](https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming)**를 표시할 수 있습니다. 이는 사용자가 전체 페이지가 로드될 때까지 기다릴 필요 없이 상호작용을 시작할 수 있도록 해줍니다.
 
-![스크린샷 2023-05-24 오후 5.47.03.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/21cfb9f5-f058-4e53-a336-18f3fd0e635d/%E1%84%89%E1%85%B3%E1%84%8F%E1%85%B3%E1%84%85%E1%85%B5%E1%86%AB%E1%84%89%E1%85%A3%E1%86%BA_2023-05-24_%E1%84%8B%E1%85%A9%E1%84%92%E1%85%AE_5.47.03.png)
+<img src="./asset/DataFetching/streaming_suspense.png">
 
 스트리밍과 Suspense에 대해 더 알아보려면 **[로딩 UI](https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming)** 및 **[스트리밍과 Suspense](https://nextjs.org/docs/app/building-your-application/data-fetching#streaming-and-suspense)** 페이지를 참조하십시오.
 
