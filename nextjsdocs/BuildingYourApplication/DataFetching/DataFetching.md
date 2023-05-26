@@ -115,7 +115,7 @@ Next.js는 두 가지 유형의 재검증을 제공합니다:
 
 서버 컴포넌트와 **[중첩된 레이아웃](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts)**을 사용하면 데이터가 필요하지 않은 페이지의 일부를 즉시 렌더링하고, 데이터를 가져오는 페이지의 일부에는 **[로딩 상태](https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming)**를 표시할 수 있습니다. 이는 사용자가 전체 페이지가 로드될 때까지 기다릴 필요 없이 상호작용을 시작할 수 있도록 해줍니다.
 
-![streaming_suspense](./assets/DataFetching/streaming_suspense.PNG)
+<img src="./assets/DataFetching/streaming_suspense.PNG">
 
 스트리밍과 Suspense에 대해 더 알아보려면 **[로딩 UI](https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming)** 및 **[스트리밍과 Suspense](https://nextjs.org/docs/app/building-your-application/data-fetching#streaming-and-suspense)** 페이지를 참조하십시오.
 
