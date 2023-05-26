@@ -41,7 +41,7 @@ Next.js에서 **`fetch`**를 사용하는 방법을 알아보겠습니다.
 
 컴포넌트 내에서 데이터를 가져올 때, 두 가지 데이터 가져오기 패턴인 "병렬"과 "순차"에 대해 알아야 합니다.
 
-<img src="./assets/DataFetching/1.PNG" alt="parallel_sequential">
+<img src="nextjsdocs/BuildingYourApplication/DataFetching/assets/DataFetching/1.png" alt="parallel_sequential">
 
 - **병렬 데이터 가져오기**는 경로(route) 내에서 요청이 즉시 시작되며 데이터를 동시에 로드합니다. 이로 인해 클라이언트-서버 폭포식 효과는 줄어들고 데이터 로드에 걸리는 총 시간이 단축됩니다.
 - **순차 데이터 가져오기**는 경로 내의 요청이 서로 종속되어 워터폴을 형성합니다. 한 번의 가져오기가 다른 결과에 의존하거나 다음 가져오기 전에 조건을 충족시키기 위해 이 패턴을 원하는 경우도 있을 수 있습니다. 그러나 이 동작은 의도하지 않게 발생하여 로딩 시간이 더 오래 걸릴 수도 있습니다.
