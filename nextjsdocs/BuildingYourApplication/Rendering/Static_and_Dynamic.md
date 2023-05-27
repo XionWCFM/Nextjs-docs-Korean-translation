@@ -62,10 +62,10 @@ Next.js에서는 경로를 정적으로 렌더링하거나 동적으로 렌더�
 
 동적 함수는 사용자의 쿠키, 현재 요청 헤더 또는 URL의 검색 매개변수와 같이 요청 시점에만 알 수 있는 정보에 의존합니다. Next.js에서 이러한 동적 함수는 다음과 같습니다:
 
-- 서버 컴포넌트에서 `[cookies()](https://nextjs.org/docs/app/api-reference/functions/cookies)` 또는 `[headers()](https://nextjs.org/docs/app/api-reference/functions/headers)` 를 사용하면 요청 시 전체 경로가 동적 렌더링으로 선택됩니다.
-- 클라이언트 컴포넌트에서 `[useSearchParams()](https://nextjs.org/docs/app/api-reference/functions/use-params)`를 사용하면 정적 렌더링을 건너뛰고 대신 클라이언트에서 가장 가까운 상위 서스펜스 경계까지 모든 클라이언트 컴포넌트를 렌더링합니다.
+- 서버 컴포넌트에서 [`cookies()`](https://nextjs.org/docs/app/api-reference/functions/cookies) 또는 [`headers()`](https://nextjs.org/docs/app/api-reference/functions/headers) 를 사용하면 요청 시 전체 경로가 동적 렌더링으로 선택됩니다.
+- 클라이언트 컴포넌트에서 [`useSearchParams()`](https://nextjs.org/docs/app/api-reference/functions/use-params)를 사용하면 정적 렌더링을 건너뛰고 대신 클라이언트에서 가장 가까운 상위 서스펜스 경계까지 모든 클라이언트 컴포넌트를 렌더링합니다.
   - `useSearchParams()`를 사용하는 클라이언트 컴포넌트를 `<Suspense/>` 경계로 감싸는 것이 좋습니다. 이렇게 하면 그 위에 있는 모든 클라이언트 컴포넌트가 정적으로 렌더링될 수 있습니다. [Example](https://nextjs.org/docs/app/api-reference/functions/use-search-params#static-rendering).
-- `[searchParams](https://nextjs.org/docs/app/api-reference/file-conventions/page#searchparams-optional)` [Pages](https://nextjs.org/docs/app/api-reference/file-conventions/page) 프로퍼티를 사용하면 요청 시 페이지가 동적 렌더링으로 선택됩니다.
+- [`searchParams`](https://nextjs.org/docs/app/api-reference/file-conventions/page#searchparams-optional) [Pages](https://nextjs.org/docs/app/api-reference/file-conventions/page) 프로퍼티를 사용하면 요청 시 페이지가 동적 렌더링으로 선택됩니다.
 
 <br>
 
@@ -74,12 +74,6 @@ Next.js에서는 경로를 정적으로 렌더링하거나 동적으로 렌더�
 <br>
 
 ## **[Dynamic Data Fetching](https://nextjs.org/docs/app/building-your-application/rendering/static-and-dynamic-rendering#dynamic-data-fetching)**
-
-Dynamic data fetches are `fetch()` requests that specifically opt out of caching behavior by setting the `cache` option to `'no-store'` or `revalidate` to `0`.
-
-The caching options for all `fetch` requests in a layout or page can also be set using the [segment config](https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config) object.
-
-To learn more about Dynamic Data Fetching, see the [Data Fetching](https://nextjs.org/docs/app/building-your-application/data-fetching/fetching) page.
 
 동적 데이터 가져오기는 `cache` 옵션을 `'no-store'`으로 설정하거나 `revalidate`을 `0`으로 설정하여 캐싱 동작을 특별히 opt out하는 `fetch()` 요청입니다.
 
