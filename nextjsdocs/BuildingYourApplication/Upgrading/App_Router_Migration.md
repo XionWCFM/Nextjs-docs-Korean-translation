@@ -1,6 +1,6 @@
 # **앱 라우터(App Router) 점진적 적용 가이드**
 
-공식 문서 : [https://nextjs.org/docs/app/building-your-application/upgrading/app-router-migration](../Upgrading.md/app-router-migration)
+공식 문서 : [https://nextjs.org/docs/app/building-your-application/upgrading/app-router-migration](https://nextjs.org/docs/app/building-your-application/upgrading/app-router-migration)
 
 > ※ 링크가 추가되어 있으나 해당되는 내용이 없는 경우가 있습니다. 이러한 경우에는 하이퍼링크 텍스트의 뒷부분에 '※' 표시를 달아두겠습니다. - 번역자 드림
 
