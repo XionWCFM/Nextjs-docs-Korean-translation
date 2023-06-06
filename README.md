@@ -1,14 +1,18 @@
-# Nextjs-docs-Korean-translation
 
+# Nextjs-docs-Korean-translation
 ## Next.js 한글 문서
+
 
 본문서에서는 [Next.js Docs](https://nextjs.org/docs) 를 한글로 번역하는 프로젝트를 진행중입니다.
 
 번역에 참여하실 분은 해당 레포에서 참여해주세요
 
-기여와 관련된 내용은 [Contribution Guidelines](CONTRIBUTING.md)을 참고해주세요
+기여와 관련된 내용은  [Contribution Guidelines](CONTRIBUTING.md)을 참고해주세요
+
+
 
 <br>
+
 
 [![Since](https://img.shields.io/badge/since-2023.05.01-333333.svg?style=flat-square)](https://github.com/XionWCFM/)
 [![LICENSE](https://img.shields.io/dub/l/vibe-d.svg?style=flat-square)](https://github.com/XionWCFM/Nextjs-docs-Korean-translation)
@@ -19,17 +23,22 @@
 
 <br>
 
+
 # 컨트리뷰터 목록
 
 <br>
+
 
 <a href="https://github.com/XionWCFM/Nextjs-docs-Korean-translation/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=XionWCFM/Nextjs-docs-Korean-translation" />
 </a>
 
+
 <br>
 
 <br>
+
+
 
 <br>
 
@@ -40,10 +49,12 @@
 [joywhy](https://github.com/joywhy)
 감사합니다!
 
+
 # 문서 하이퍼링크
 
-# Getting Started
 
+
+# Getting Started
 [Installation](./nextjsdocs/GettingStarted/Installation.md)
 
 [React Essentials](./nextjsdocs/GettingStarted/React_Essentials.md)
@@ -53,6 +64,8 @@
 ---
 
 # API Reference
+
+
 
 ### Components
 
@@ -64,7 +77,9 @@
 
 [Scripts](./nextjsdocs/APIReference/Components/Script.md)
 
-### File Conventions
+
+
+### File Conventions 
 
 <details>
 <summary>Metadata</summary>
@@ -102,7 +117,6 @@
 <br>
 
 ### Functions
-
 [cookies](./nextjsdocs/APIReference/Functions/cookies.md)
 
 [draftMode](./nextjsdocs/APIReference/Functions/draftMode.md)
@@ -133,6 +147,7 @@
 
 [usePathname](./nextjsdocs/APIReference/Functions/usePathname.md)
 
+
 [useReportWebVitals](./nextjsdocs/APIReference/Functions/useReportWebVitals.md)
 
 [useRouter](./nextjsdocs/APIReference/Functions/useRouter.md)
@@ -145,8 +160,8 @@
 
 <br>
 
-### next.config.js Options
 
+### next.config.js Options
 [appDir](./nextjsdocs/APIReference/next.config.jsOptions/appDir.md)
 
 [assetPrefix](./nextjsdocs/APIReference/next.config.jsOptions/assetPrefix.md)
@@ -165,13 +180,18 @@
 
 [exportPathMap](./nextjsdocs/APIReference/next.config.jsOptions/exportPathMap.md)
 
+
 [generateBuildld](./nextjsdocs/APIReference/next.config.jsOptions/generateBuildld.md)
+
 
 [generateEtages](./nextjsdocs/APIReference/next.config.jsOptions/generateEtages.md)
 
+
 [headers](./nextjsdocs/APIReference/next.config.jsOptions/headers.md)
 
+
 [httpAgentOptions](./nextjsdocs/APIReference/next.config.jsOptions/httpAgentOptions.md)
+
 
 [images](./nextjsdocs/APIReference/next.config.jsOptions/images.md)
 
@@ -183,6 +203,7 @@
 
 [pageExtensions](./nextjsdocs/APIReference/next.config.jsOptions/pageExtensions.md)
 
+
 [poweredByHeader](./nextjsdocs/APIReference/next.config.jsOptions/poweredByHeader.md)
 
 [productionBrowserSourceMaps](./nextjsdocs/APIReference/next.config.jsOptions/productionBrowserSourceMaps.md)
@@ -193,9 +214,10 @@
 
 [rewrites](./nextjsdocs/APIReference/next.config.jsOptions/rewrites.md)
 
+
 [serverComponentsExternalPackages](./nextjsdocs/APIReference/next.config.jsOptions/serverComponentsExternalPackages.md)
 
-[Runtime Config](./nextjsdocs/APIReference/next.config.jsOptions/RuntimeConfig.md)
+[RuntimeConfig](./nextjsdocs/APIReference/next.config.jsOptions/RuntimeConfig.md)
 
 [trailingSlash](./nextjsdocs/APIReference/next.config.jsOptions/trailingSlash.md)
 
@@ -209,9 +231,12 @@
 
 [urllmports](./nextjsdocs/APIReference/next.config.jsOptions/urllmports.md)
 
+
 [webpack](./nextjsdocs/APIReference/next.config.jsOptions/webpack.md)
 
 [webVitalsAttribution](./nextjsdocs/APIReference/next.config.jsOptions/webVitalsAttribution.md)
+
+
 
 <br>
 
@@ -221,6 +246,8 @@
 
 [Next.jsCLI](./nextjsdocs/APIReference/Next.jsCLI.md)
 
+
+
 <br>
 
 ---
@@ -229,7 +256,10 @@
 
 <br>
 
+
+
 ### Routing
+
 
 [Routing](./nextjsdocs/BuildingYourApplication/Routing/Routing.md)
 
@@ -261,6 +291,7 @@
 
 ### Rendering
 
+
 [Static and Dynamic](./nextjsdocs/BuildingYourApplication/Rendering/Static_and_Dynamic.md)
 
 [Edge and Node.js Runtimes](./nextjsdocs/BuildingYourApplication/Rendering/Edge_and_Node.js_Runtimes.md)
@@ -268,6 +299,8 @@
 <br>
 
 ### Data Fetching
+
+
 
 [Fetching](./nextjsdocs/BuildingYourApplication/DataFetching/Fetching.md)
 
@@ -277,9 +310,12 @@
 
 [Server Actions](./nextjsdocs/BuildingYourApplication/DataFetching/Server_Actions.md)
 
+
 <br>
 
 ### Styling
+
+
 
 [CSS Modules](./nextjsdocs/BuildingYourApplication/Styling/CSS_Modules.md)
 
@@ -292,6 +328,7 @@
 <br>
 
 ### Optimizing
+
 
 [Images](./nextjsdocs/BuildingYourApplication/Optimizing/Images.md)
 
@@ -311,9 +348,12 @@
 
 [Instrumentation](./nextjsdocs/BuildingYourApplication/Optimizing/Instrumentation.md)
 
+
+
 <br>
 
 ### Configuring
+
 
 [TypeScript](./nextjsdocs/BuildingYourApplication/Configuring/TypeScript.md)
 
@@ -333,11 +373,17 @@
 
 ### Deploying
 
+
+
 [Static Exports](./nextjsdocs/BuildingYourApplication/Deploying/Static_Exports.md)
+
 
 <br>
 
+
 ### Upgrading
+
+
 
 [Upgrading](./nextjsdocs/BuildingYourApplication/Upgrading/Upgrading.md)
 
@@ -345,11 +391,15 @@
 
 [App Router Migration](./nextjsdocs/BuildingYourApplication/Upgrading/App_Router_Migration.md)
 
+
 <br>
+
 
 ---
 
 # Architecture
+
+
 
 [Accessibility](./nextjsdocs/Architecture/Accessibility.md)
 
