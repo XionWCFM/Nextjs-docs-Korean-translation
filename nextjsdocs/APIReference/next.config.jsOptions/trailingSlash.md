@@ -1,4 +1,4 @@
-# 후행 슬래시(trailingSlash)
+# trailingSlash
 
 공식 문서 : [https://nextjs.org/docs/app/api-reference/next-config-js/trailingSlash](https://nextjs.org/docs/app/api-reference/next-config-js/trailingSlash)
 
