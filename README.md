@@ -191,7 +191,7 @@
 
 [redirects](./nextjsdocs/APIReference/next.config.jsOptions/redirects.md)
 
-[rewrited](./nextjsdocs/APIReference/next.config.jsOptions/rewrited.md)
+[rewrites](./nextjsdocs/APIReference/next.config.jsOptions/rewrites.md)
 
 [serverComponentsExternalPackages](./nextjsdocs/APIReference/next.config.jsOptions/serverComponentsExternalPackages.md)
 
