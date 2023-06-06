@@ -1,4 +1,4 @@
-# \***\*Next.js CLI\*\***
+# Next.js CLI
 
 Next.js CLI를 사용하면 애플리케이션을 시작하고 빌드하며 내보낼 수 있습니다.
 
