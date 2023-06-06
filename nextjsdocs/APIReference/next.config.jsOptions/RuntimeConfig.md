@@ -26,7 +26,7 @@ module.exports = {
 
 클라이언트 및 서버 측 코드 모두에서 접근 가능한 것은 `publicRuntimeConfig`의 하위에 위치시킵니다.
 
-> `publicRuntimeConfig`에 의존하는 페이지는 **반드시** `getInitialProps` 또는 `getServerSideProps`를 사용하거나, 애플리케이션에서 getInitialProps를 사용하는 [사용자 지정 앱](https://nextjs.org/docs/pages/building-your-application/routing/custom-app)을 가져야만 [자동 정적 최적화](https://nextjs.org/docs/pages/building-your-application/rendering/automatic-static-optimization)에서 제외될 수 있습니다. 런타임 구성은 서버 측 렌더링되지 않은 페이지(또는 페이지의 구성 요소)에서는 사용할 수 없습니다.
+> `publicRuntimeConfig`에 의존하는 페이지는 **반드시** `getInitialProps` 또는 `getServerSideProps`를 사용하거나, 애플리케이션에서 `getInitialProps`를 사용하는 [사용자 지정 앱](https://nextjs.org/docs/pages/building-your-application/routing/custom-app)을 가져야만 [자동 정적 최적화](https://nextjs.org/docs/pages/building-your-application/rendering/automatic-static-optimization)에서 제외될 수 있습니다. 런타임 구성은 서버 측 렌더링되지 않은 페이지(또는 페이지의 구성 요소)에서는 사용할 수 없습니다.
 
 앱에서 런타임 구성에 접근하려면 다음과 같이 `next/config`를 사용합니다.
 
