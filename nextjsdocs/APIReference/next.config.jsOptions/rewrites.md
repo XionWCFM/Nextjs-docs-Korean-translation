@@ -409,7 +409,7 @@ module.exports = {
       },
       {
         // basePath: false 설정으로 인해
-        // /without-basePath에 /docs 가 추가되지 않습니다.
+        // /without-basePath에 /docs가 추가되지 않습니다.
         // Note : 내부 rewrites에 사용될 수 없습니다. 예 : `destination: '/another'`
         source: "/without-basePath",
         destination: "https://example.com",
@@ -424,7 +424,7 @@ module.exports = {
 
 ### i18n support를 활용한 rewrites
 
-[`i18n` 지원](https://nextjs.org/docs/pages/building-your-application/routing/internationalization)을 활용하여 rewrites와 함께 사용할 때, rewrite에 `locale: false`를 추가하지 않는 한 구성된 `locales`를 처리하기 위해 `source`와 `destination`에 자동으로 접두어가 붙습니다. `locale: false`를 사용하는 경우 `source`와 `destination`을 locale과 함께 접두어로 추가해야 올바르게 일치합니다.
+[`i18n` 지원](https://nextjs.org/docs/pages/building-your-application/routing/internationalization)을 활용하여 rewrites와 함께 사용할 때, rewrite에 `locale: false`를 추가하지 않는 한 구성된 `locales`를 처리하기 위해 `source`와 `destination`에 자동으로 접두어가 붙습니다. `locale: false`를 사용하는 경우 `source`와 `destination`에 locale을 접두어로 추가해야 올바르게 일치합니다.
 
 ```jsx
 // next.config.js
@@ -476,6 +476,6 @@ module.exports = {
 
 | Version   | Changes        |
 | --------- | -------------- |
-| `v13.3.0` | `missing 추가` |
-| `v10.2.0` | `has 추가`     |
-| `v9.5.0`  | `Headers 추가` |
+| `v13.3.0` | `missing` 추가 |
+| `v10.2.0` | `has` 추가     |
+| `v9.5.0`  | `Headers` 추가 |
