@@ -22,4 +22,4 @@ module.exports = {
 
 | Version  | Changes              |
 | -------- | -------------------- |
-| `v9.5.0` | `trailingSlash 추가` |
+| `v9.5.0` | `trailingSlash` 추가 |
