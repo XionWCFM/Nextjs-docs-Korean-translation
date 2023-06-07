@@ -18,7 +18,7 @@
 - [@next/mdx](https://github.com/vercel/next.js/tree/canary/packages/next-mdx)
 - [@next/bundle-analyzer](https://github.com/vercel/next.js/tree/canary/packages/next-bundle-analyzer)
 
-webpack 사용을 확장하기 위해 next.config.js 내에서 config를 확장하는 함수를 다음과 같이 정의할 수 있습니다.
+`webpack` 사용을 확장하기 위해 `next.config.js` 내에서 config를 확장하는 함수를 다음과 같이 정의할 수 있습니다.
 
 ```jsx
 // next.config.js
@@ -34,7 +34,7 @@ module.exports = {
 };
 ```
 
-> webpack 함수는 서버와 클라이언트 각각에 대해 실행되어 총 두 번 실행됩니다. 이를 통해 isServer 속성을 사용하여 클라이언트와 서버 구성을 구별할 수 있습니다.
+> `webpack` 함수는 서버와 클라이언트 각각에 대해 실행되어 총 두 번 실행됩니다. 이를 통해 isServer 속성을 사용하여 클라이언트와 서버 구성을 구별할 수 있습니다.
 
 `webpack` 함수의 두 번째 인자는 다음과 같은 속성을 가진 객체입니다.
 
