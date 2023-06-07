@@ -21,4 +21,4 @@ module.exports = nextConfig;
 
 | Version   | Changes                  |
 | --------- | ------------------------ |
-| `v13.0.0` | `transpilePackages 추가` |
+| `v13.0.0` | `transpilePackages` 추가 |
