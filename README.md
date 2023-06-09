@@ -212,12 +212,12 @@
 
 [redirects](./nextjsdocs/APIReference/next.config.jsOptions/redirects.md)
 
-[rewrited](./nextjsdocs/APIReference/next.config.jsOptions/rewrited.md)
+[rewrites](./nextjsdocs/APIReference/next.config.jsOptions/rewrites.md)
 
 
 [serverComponentsExternalPackages](./nextjsdocs/APIReference/next.config.jsOptions/serverComponentsExternalPackages.md)
 
-[serverRuntimeConfig_and_publicRuntimeConfig](./nextjsdocs/APIReference/next.config.jsOptions/serverRuntimeConfig_and_publicRuntimeConfig.md)
+[RuntimeConfig](./nextjsdocs/APIReference/next.config.jsOptions/RuntimeConfig.md)
 
 [trailingSlash](./nextjsdocs/APIReference/next.config.jsOptions/trailingSlash.md)
 
