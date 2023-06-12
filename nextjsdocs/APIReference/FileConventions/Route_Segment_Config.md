@@ -16,7 +16,7 @@ Route Segment  옵션은 [Page](), [Layout]() 또는 [Route Handler]()의 동작
 
 
 ```jsx
-//layout.js OR page.js OR route.js
+//layout.js/page.js/route.js
 
 export const dynamic = 'auto';
 export const dynamicParams = true;
@@ -84,8 +84,8 @@ dynamic segment가 방문 했을 때 무슨 일이 있는지 컨트롤 하는 �
 export const dynamicParmas = true; // true | false
 ```
 
-- true (default) :  generateStaticParams 를 포함하지 않는 Dynamic segments는 요구에 구성되어 있습니다.
-- false : generateStaticParams를 포함하지 않는 Dynamic segements 는 404를 반환합니다.
+- **true (default)** :  `generateStaticParams` 를 포함하지 않는 Dynamic segments는 요구에 구성되어 있습니다.
+- **false** : `generateStaticParams`를 포함하지 않는 Dynamic segements 는 404를 반환합니다.
 
 <br>
 
@@ -188,7 +188,7 @@ export const runtime = 'node.js'
 //layout.js/page.js/route.js
 
 export const preferredRegion = 'auto';
-//'all' | 'iad1' | ['iad1', 'sfo1'] 
+//'auto' | 'global' | 'homne' | ['iad1', 'sfo1'] 
 ```
 
 `preferredRegion` 및 지원되는 regions 은 배포 플랫폼에 따라 달라집니다. 

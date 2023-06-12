@@ -48,7 +48,7 @@ Route Handlers는 app 디렉토리 안에서만 가능합니다. Route Handlers 
 
 <br>
 
-### `**context` (optional)**
+### `context` (optional)
 
 ```jsx
 //app/dashboard/[team]/route.js
@@ -68,6 +68,6 @@ export async function GET(request, context: { params }){
 
 ---
 
-## NestResponse
+## NextResponse
 
 Route Handlers는 `NextResponse` 객체를 반환함으로써 Web Response API를 확장할 수 있습니다. 이를 통해 쿠키 설정, 헤더 설정, 리다이렉트 및 rewrite (리라이트) 를 쉽게 수행할 수 있습니다. [API reference](https://github.com/XionWCFM/Nextjs-docs-Korean-translation/blob/main/nextjsdocs/APIReference/Functions/NextResponse.md)를 참고해보세요. 
