@@ -121,7 +121,7 @@ import Link from 'next/link'
 - `app` 디렉토리 내에 컴포넌트, 스타일, 테스트 등을 함께 둘 수 있습니다. [더 알아보기](../Routing/Routing.md).
 - `getServerSideProps`와 `getStaticProps`와 같은 데이터 가져오기 함수는 `app` 내부의 [새로운 API](../DataFetching/DataFetching.md)로 대체되었습니다. `getStaticPaths`는 [`generateStaticParams`](../../APIReference/Functions/generateStaticParams.md)로 대체되었습니다.
 - `pages/_app.js` 및 `pages/_document.js`는 `app/layout.js` 루트 레이아웃 하나로 대체되었습니다. [더 알아보기](../Routing/Pages_and_Layouts.md#root-layout-required).
-- `pages/_error.js`는 더 세분화된 `error.js` 특수 파일로 대체되었습니다. [더 알아보기](../Routing/Error_Handling).
+- `pages/_error.js`는 더 세분화된 `error.js` 특수 파일로 대체되었습니다. [더 알아보기](../Routing/Error_Handling.md).
 - `pages/404.js`는 [`not-found.js`](../../APIReference/FileConventions/not-found.js.md) 파일로 대체되었습니다.
 - `app` 디렉토리 내에 컴포넌트, 스타일, 테스트 등을 함께 둘 수 있습니다. [더 알아보기](../Routing/Routing.md).
 - `pages/api/*`는 현재 `pages` 디렉토리 내에 남아 있습니다.
@@ -562,7 +562,7 @@ export default function Index({ projects }) {
 }
 ```
 
-`app` 디렉토리에서 [fetch()](../../APIReference/Functions/fetch)를 사용한 데이터 가져오기는 기본적으로 `cache: 'force-cache'`로 설정되어 있어, 요청 데이터가 수동으로 무효화될 때까지 캐시됩니다. 이것은 `pages` 디렉토리에서의 `getStaticProps`와 유사합니다.
+`app` 디렉토리에서 [fetch()](../../APIReference/Functions/fetch.md)를 사용한 데이터 가져오기는 기본적으로 `cache: 'force-cache'`로 설정되어 있어, 요청 데이터가 수동으로 무효화될 때까지 캐시됩니다. 이것은 `pages` 디렉토리에서의 `getStaticProps`와 유사합니다.
 
 ```JSX
 // app/page.js
