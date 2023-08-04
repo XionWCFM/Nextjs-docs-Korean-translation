@@ -33,7 +33,7 @@ UI 템플릿을 위한 Component model을 사용할 수 있습니다.
 
 Server Components를 사용하면 초기 페이지 로딩이 빨라지고 클라이언트 측 JavaScript 번들 크기가 줄어듭니다. 
 기본 클라이언트 측 런타임은 캐싱이 가능하고 크기 예측이 가능하며 애플리케이션이 커져도 증가하지 않습니다.
-추가적인 JavaScript는 오직 [Client Component](./React_Essentials.md#Client-Components)를 통해 client-side 반응이 있을 때만 추가됩니다. 
+추가적인 JavaScript는 오직 [Client Component](./React_Essentials.md#client-components)를 통해 client-side 반응이 있을 때만 추가됩니다. 
 
 Next.j로 경로가 로드 될 때, 초기 HTML은 서버에서 렌더링됩니다. 이후에 비동기 적으로 Next.js 및 React 클라이언트 측 런타임을 로드해서 브라우저의 HTML이 client와 상호작용할 수 있도록
 점진적으로 향상됩니다.
