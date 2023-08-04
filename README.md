@@ -57,6 +57,8 @@
 # Getting Started
 [Installation](./nextjsdocs/GettingStarted/Installation.md)
 
+[Project Structure](./nextjsdocs/GettingStarted/Project_Structure.md)
+
 [React Essentials](./nextjsdocs/GettingStarted/React_Essentials.md)
 
 <br>
