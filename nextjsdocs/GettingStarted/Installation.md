@@ -133,7 +133,7 @@ export default function Document() {
 ## Run the Development Server 
 1. `npm run dev` 로 개발 서버를 시작합니다.
 2. `http://localhost:3000`을 통해 당신의 어플리케이션을 볼 수 있습니다.
-3. `app/layout.tsx` (혹은 `pages/index.tsx`) 파일을 수정하고 저장하세요. 이후 업데이트 된 결과를 브라우저에서 확인하 수 있습니다.
+3. `app/layout.tsx` (혹은 `pages/index.tsx`) 파일을 수정하고 저장하세요. 이후 업데이트 된 결과를 브라우저에서 확인할할 수 있습니다.
 
 # Next Step
 Next.js 프로젝트의 파일 및 폴더에 대해 알아보세요.
