@@ -42,3 +42,57 @@ Server Components로 쉽게 전환할 수 있도록 특수 파일([special files
 내부의 모든 컴포넌트들은 기본적으로 Server Components입니다. 따라서 추가 작업 없이 자동으로 적용하여 즉시 뛰어난 성능을 얻을 수 있습니다. 또한 선택적으로 [`use client` 선언](./#React-Essentials.md#the-use-client-directive)을 사용하여 Client Component를 옵트인(opt-in)할 수 있습니다.
 
 # Client Components
+Client Components를 사용하면 client-side 반응형을 추가할 수 있습니다. Next.js에서는 서버에서 미리 렌더링([pre-rendered](../BuildingYourApplication/Routing/Routing.md))되고 클라이언트에서 hydrated(수화) 됩니다. Client Components는 항상 [Pages Router](../BuildingYourApplication/Routing/Routing.md)의 Component가 작동하는 방식입니다. 
+
+## The "use Client" directive
+[`"use client"`](https://github.com/reactjs/rfcs/pull/227) 선언은  서버와 클라이언트 컴포넌트 모듈 그래프 사이의 경계를 선언하는 규칙입니다.
+```jsx
+// app/counter.tsx
+'use client'
+ 
+import { useState } from 'react'
+ 
+export default function Counter() {
+  const [count, setCount] = useState(0)
+ 
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+    </div>
+  )
+}
+
+```
+![image](https://github.com/kd02109/Nextjs-docs-Korean-translation/assets/57277708/d1fdca16-0b0c-4dd2-9223-ca2a8df6042f)
+
+`"use client"`는 서버 전용 코드와 클라이언트 코드 사이에 위치합니다. 파일 상단의 import 문 위에 위치하여 서버 전용에서 클라이언트 부분으로 경계를 넘나드는 cut-off point를 정의합니다.
+`"use client"`가 파일에 정의 되면, 하위 컴포넌트를 포함하여 가져온 다른 모든 모듈은 클라이언트 번들의 일부로 간주됩니다.
+
+서버 컴포넌트가 기본값이므로 `"use client"` 선언으로 시작하는 모듈에서 정의하거나 import 하지 않는 한 모든 컴포넌트는 서버 컴포넌트 모듈 그래프의 일부가 됩니다.
+> **Good to Know:**
+>  - Server Component의 components는 서버에서만 렌더링되도록 보장됩니다.
+>  - Client Component module graph의 Components는 기본적으로 클라이언트 측에서 렌더링 되지만, Next.js를 사용하면 서버에서 미리 렌더링한 후 클라이언트에서 하이드레이션(hydraterd)할 수도 있습니다.
+>  - `"use client"`는 import 전에 **파일의 최 상단**에서 선언되어야 합니다.
+>  - `"use client"`는 모든 파일에서 정의되어야 할 필요는 없습니다. 클라이언트 모듈 경계는 'entry point'(진입점)에서 한 번만 정의하면 되며, 이 경계로 import한 모든 모듈은 클라이언트 컴포넌트로 간주됩니다.
+
+# When to use Sercer and Client Components?
+서버 컴포넌트와 클라이언트 컴포넌트 간의 결정을 단순화하기 위해 클라이언트 컴포넌트에 대한 사용 사례가 있을 때까지는 서버 컴포넌트(`app` 디렉토리의 기본값)를 사용하는 것이 좋습니다.
+
+이 표에는 서버 및 클라이언트 컴포넌트의 다양한 사용 사례가 요약되어 있습니다:
+
+| What do you need to do? | Server Component | Client Component |
+| --- | --- | --- |
+| Fetch data (데이터 가져오기) | ✅ | ❌ |
+| Keep sensitive information on the server(access tokens, API keys, etc) <br> 서버에 민감한 정보 보관  | ✅ | ❌ |
+| Access backend resources (directly) <br>백엔드 자원에 접근(직접적으로) | ✅ | ❌ |
+| Keep large dependencies on the server / Reduce client-side JavaScript <br> 서버에 대한 대규모 종속성 유지 / 클라이언트 측 자바스크립트 감소 | ✅ | ❌ |
+| Add interactivity and event listeners (onClick(), onChange(), etc) <br> 반응형, 이벤트 리스너 추가하기 | ❌ | ✅ |
+| Use State and Lifecycle Effects (useState(), useReducer(), useEffect(), etc) <br> useState 등 사용 | ❌ | ✅ |
+| Use browser-only APIs <br> Browser API 사용 | ❌ | ✅ |
+| Use custom hooks that depend on state, effects, or browser-only APIs <br> useState, useEffect 혹은 브라우저 API에 의존하는 custom hook 사용 | ❌ | ✅ |
+| Use [React Class components](https://react.dev/reference/react/Component) <br> 리엑트 클래스 컴포넌트 사용 | ❌ | ✅ |
+
+# Patterns
+
+## Moving Client Components to the Leaves
