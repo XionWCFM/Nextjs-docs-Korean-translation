@@ -355,4 +355,181 @@ export default function Page() {
 ### Library Authors
 - 비슷한 방식으로 다른 개발자가 사용할 패키지를 만드는 라이브러리 작성자는 `"use client"` 지시문을 사용하여 패키지의 클라이언트 진입점을 표시할 수 있습니다. 이를 통해 패키지 사용자는 래핑 경계를 만들지 않고도 패키지 컴포넌트를 서버 컴포넌트로 직접 가져올 수 있습니다.
 - [트리의 더 깊은 곳에서  `"use client"`을 사용](../GettingStarted/React_Essentials.md#moving-client-components-to-the-leaves)하여 가져온 모듈이 서버 컴포넌트 모듈 그래프의 일부가 될 수 있도록 하여 패키지를 최적화할 수 있습니다.
-- 일부 번들러는 "use client" 지시문을 제거할 수 있다는 점에 유의할 필요가 있습니다. [React Wrap Balancer](https://github.com/shuding/react-wrap-balancer/blob/main/tsup.config.ts#L10-L13) 및 [Vercel Analytics](https://github.com/vercel/analytics/blob/main/packages/web/tsup.config.js#L26-L30) 리포지토리에서 "use client" 지시문을 포함하도록 esbuild를 구성하는 방법에 대한 예제를 찾을 수 있습니다.
+- 일부 번들러는 `"use client"` 지시문을 제거할 수 있다는 점에 유의할 필요가 있습니다. [React Wrap Balancer](https://github.com/shuding/react-wrap-balancer/blob/main/tsup.config.ts#L10-L13) 및 [Vercel Analytics](https://github.com/vercel/analytics/blob/main/packages/web/tsup.config.js#L26-L30) 리포지토리에서 `"use client"` 지시문을 포함하도록 esbuild를 구성하는 방법에 대한 예제를 찾을 수 있습니다.
+
+# Context
+대부분의 React 애플리케이션은 [context](https://react.dev/reference/react/useContext)에 의존해 컴포넌트 간에 데이터를 공유하는데, 이는 [createContext](https://react.dev/reference/react/useContext)를 통해 직접적으로 또는 타사 라이브러리에서 가져온 provider 컴포넌트를 통해 간접적으로 이루어집니다.
+
+Next.js 13에서는 context가 클라이언트 컴포넌트 내에서 완벽하게 지원되지만 서버 컴포넌트 내에서 직접 생성하거나 사용할 수는 없습니다. 서버 컴포넌트에는 (반응형이 아닙니다.) React state가 없고, context는 주로 일부 React state가 업데이트된 후 트리 깊숙한 곳에 있는 반응형 컴포넌트를 다시 렌더링하는 데 사용되기 때문입니다.
+
+서버 컴포넌트 간 데이터 공유에 대한 대안은 나중에 논의하겠지만, 먼저 클라이언트 컴포넌트 내에서 컨텍스트를 사용하는 방법을 살펴봅시다.
+
+## Using context in Client Components
+모든 context API는 클라이언트 컴포넌트 내에서 완벽하게 지원됩니다:
+```jsx
+// app/sidebar.tsx
+'use client'
+ 
+import { createContext, useContext, useState } from 'react'
+ 
+const SidebarContext = createContext()
+ 
+export function Sidebar() {
+  const [isOpen, setIsOpen] = useState()
+ 
+  return (
+    <SidebarContext.Provider value={{ isOpen }}>
+      <SidebarNav />
+    </SidebarContext.Provider>
+  )
+}
+ 
+function SidebarNav() {
+  let { isOpen } = useContext(SidebarContext)
+ 
+  return (
+    <div>
+      <p>Home</p>
+ 
+      {isOpen && <Subnav />}
+    </div>
+  )
+}
+```
+그러나 context provider는 일반적으로 현재 테마와 같은 글로벌 관심사를 공유하기 위해 애플리케이션의 루트 근처에 렌더링됩니다. 서버 컴포넌트에서는 컨텍스트가 지원되지 않으므로 애플리케이션의 루트에서 컨텍스트를 만들려고 하면 오류가 발생합니다:
+```jsx
+// app/layout.tsx
+import { createContext } from 'react'
+ 
+//  createContext is not supported in Server Components
+export const ThemeContext = createContext({})
+ 
+export default function RootLayout({ children }) {
+  return (
+    <html>
+      <body>
+        <ThemeContext.Provider value="dark">{children}</ThemeContext.Provider>
+      </body>
+    </html>
+  )
+}
+```
+이 문제를 해결하려면 컨텍스트를 생성하고 클라이언트 컴포넌트 내에서 해당 provider를 렌더링하세요:
+```jsx
+// app/theme-provider.tsx
+'use client'
+ 
+import { createContext } from 'react'
+ 
+export const ThemeContext = createContext({})
+ 
+export default function ThemeProvider({ children }) {
+  return <ThemeContext.Provider value="dark">{children}</ThemeContext.Provider>
+}
+```
+이제 서버 컴포넌트가 클라이언트 컴포넌트로 표시되었으므로 공급자를 직접 렌더링할 수 있습니다:
+```jsx
+// app/layout.tsx
+import ThemeProvider from './theme-provider'
+ 
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html>
+      <body>
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
+    </html>
+  )
+}
+```
+provider가 루트에서 렌더링되면 앱의 다른 모든 클라이언트 컴포넌트가 이 컨텍스트를 사용할 수 있습니다.
+> Goot to Know: provider를 트리에서 가능한 한 깊숙이 렌더링해야 합니다. `ThemeProvider`가 전체 <html> 문서 대신 {children}만 래핑하는 방식에 주목하세요. 이렇게 하면 Next.js가 서버 컴포넌트의 정적 부분을 더 쉽게 최적화할 수 있습니다.
+
+## Rendering third-party context providers in Server Components
+타사 npm 패키지에는 애플리케이션의 루트 근처에서 렌더링해야 하는 Provider가 포함되어 있는 경우가 많습니다. 이러한 공급자에 `"use client"` 지시어가 포함되어 있으면 서버 컴포넌트 내부에서 직접 렌더링할 수 있습니다. 하지만 서버 컴포넌트는 매우 새롭기 때문에 많은 서드파티 Provider가 아직 이 지시문을 추가하지 않았을 것입니다.
+
+`'use-client'`이 없는 타사 Provider를 렌더링하려고 하면 오류가 발생합니다:
+```jsx
+// app/layout.tsx
+import { ThemeProvider } from 'acme-theme'
+ 
+export default function RootLayout({ children }) {
+  return (
+    <html>
+      <body>
+        {/*  Error: `createContext` can't be used in Server Components */}
+        <ThemeProvider>{children}</ThemeProvider>
+      </body>
+    </html>
+  )
+}
+```
+이 문제를 해결하려면 third-party providers를 자체 클라이언트 컴포넌트로 래핑하세요:
+```jsx
+// app/providers.js
+'use client'
+ 
+import { ThemeProvider } from 'acme-theme'
+import { AuthProvider } from 'acme-auth'
+ 
+export function Providers({ children }) {
+  return (
+    <ThemeProvider>
+      <AuthProvider>{children}</AuthProvider>
+    </ThemeProvider>
+  )
+}
+```
+이제 루트 레이아웃 내에서 <Provider />를 직접 가져와 렌더링할 수 있습니다.
+```jsx
+// app/layout.js
+import { Providers } from './providers'
+ 
+export default function RootLayout({ children }) {
+  return (
+    <html>
+      <body>
+        <Providers>{children}</Providers>
+      </body>
+    </html>
+  )
+}
+```
+루트에서 렌더링된 providers를 사용하면 이러한 라이브러리의 모든 컴포넌트와 hook이 자체 클라이언트 컴포넌트 내에서 예상대로 작동합니다.
+
+타사 라이브러리가 클라이언트 코드에 `"use-client"`을 추가하면 래퍼 클라이언트 컴포넌트를 제거할 수 있습니다.
+
+## Sharing data between Server Components
+서버 컴포넌트는 반응향이 아니기 때문에 React state를 사용하지 않습니다. 따라서 데이터를 공유하기 위해 React context가 필요하지 않습니다. 대신 여러 서버 컴포넌트가 액세스해야 하는 공통 데이터에 native JavaScript 패턴을 사용할 수 있습니다. 예를 들어 모듈을 사용하여 여러 컴포넌트에서 데이터베이스 연결을 공유할 수 있습니다:
+```ts
+// utils/database.ts
+export const db = new DatabaseConnection()
+```
+```ts
+// app/users/layout.tsx
+import { db } from '@utils/database'
+ 
+export async function UsersLayout() {
+  let users = await db.query()
+  // ...
+}
+```
+```ts
+// app/users/[id]/page.tsx
+import { db } from '@utils/database'
+ 
+export async function DashboardPage() {
+  let user = await db.query()
+  // ...
+}
+```
+위의 예제에서는 레이아웃과 페이지 모두 데이터베이스 쿼리를 수행해야 합니다. 이러한 각 컴포넌트는 @utils/database 모듈을 가져와 데이터베이스에 대한 액세스를 공유합니다. 이 자바스크립트 패턴을 글로벌 싱글톤(global singletons)이라고 합니다.
+
+## Sharing fetch requests between Server Components
+데이터를 가져올 때 `page` 또는 `layout`과 일부 하위 컴포넌트 간에 `fetch` 결과를 공유할 수 있습니다. 이는 구성 요소 간에 불필요한 결합을 유발하며 구성 요소 간에 prop이 양방향으로 전달될 수 있습니다.
+
+대신 데이터를 사용하는 컴포넌트와  데이터 fetch를 함께 배치하는 것이 좋습니다. [`fetch` 요청은 서버 컴포넌트에 자동으로 메모리화됩니다](../BuildingYourApplication/DataFetching/Caching.md), 따라서 각 route segment는 중복 요청에 대한 걱정 없이 필요한 데이터를 정확하게 요청할 수 있습니다.  Next.js는 `fetch` 캐시에서 동일한 값을 읽습니다.
