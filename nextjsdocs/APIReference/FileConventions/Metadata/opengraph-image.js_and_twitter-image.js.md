@@ -1,6 +1,6 @@
 # **opengraph-image와 twitter-image**
 
-**`opengraph-image`**와 **`twitter-image`** 파일 규약을 사용하면 경로 세그먼트에 대한 Open Graph 및 Twitter 이미지를 설정할 수 있습니다.
+`opengraph-image`와 `twitter-image` 파일 규약을 사용하면 경로 세그먼트에 대한 Open Graph 및 Twitter 이미지를 설정할 수 있습니다.
 
 이 규약들은 사용자가 사이트에 대한 링크를 공유할 때 소셜 네트워크 및 메시징 앱에서 나타나는 이미지를 설정하는 데 유용합니다.
 
@@ -26,7 +26,7 @@ Next.js는 파일을 평가하고 앱의 **`<head>`** 요소에 적절한 태�
 
 **`opengraph-image.(jpg|jpeg|png|gif)`** 이미지 파일을 원하는 경로 세그먼트에 추가하세요.
 
-<head> 출력 결과
+\<head> 출력 결과
 
 ```
 <meta property="og:image" content="<generated>" />
@@ -39,7 +39,7 @@ Next.js는 파일을 평가하고 앱의 **`<head>`** 요소에 적절한 태�
 
 **`twitter-image.(jpg|jpeg|png|gif)`** 이미지 파일을 원하는 경로 세그먼트에 추가하세요.
 
-<head> 출력 결과
+\<head> 출력 결과
 
 ```
 <meta name="twitter:image" content="<generated>" />
@@ -58,7 +58,7 @@ opengraph-image.alt.txt
 About Acme
 ```
 
-<head> 출력 결과
+\<head> 출력 결과
 
 ```
 <meta property="og:image:alt" content="About Acme" />
@@ -74,7 +74,7 @@ twitter-image.alt.txt
 About Acme
 ```
 
-<head> 출력 결과
+\<head> 출력 결과
 
 ```
 <meta property="og:image:alt" content="About Acme" />
@@ -82,7 +82,7 @@ About Acme
 
 ## **[코드를 사용하여 이미지 생성하기 (.js, .ts, .tsx)](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image#generate-images-using-code-js-ts-tsx)**
 
-**[literal image files](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image#image-files-jpg-png-gif)**를 사용하는 것 외에도 코드를 사용하여 이미지를 **동적으로 생성**할 수 있습니다.
+[literal image files](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/opengraph-image#image-files-jpg-png-gif)를 사용하는 것 외에도 코드를 사용하여 이미지를 **동적으로 생성**할 수 있습니다.
 
 **`opengraph-image`** 또는 **`twitter-image`** 경로를 생성하여 함수를 기본 내보내기하는 방식으로 경로 세그먼트의 공유 이미지를 생성하세요.
 
@@ -157,7 +157,7 @@ export default async function Image() {
 }
 ```
 
-<head> 출력 결과
+\<head> 출력 결과
 
 ```
 <meta property="og:image" content="<generated>" />
@@ -216,7 +216,7 @@ opengraph-image.tsx / twitter-image.tsx
 export const alt = 'My images alt text' export default function Image() {}
 ```
 
-<head> output
+\<head> output
 
 ```
 <meta property="og:image:alt" content="My images alt text" />
@@ -230,7 +230,7 @@ opengraph-image.tsx / twitter-image.tsx
 export const size = { width: 1200, height: 630 } export default function Image() {}
 ```
 
-<head> 출력 결과
+\<head> 출력 결과
 
 ```
 <meta property="og:image:width" content="1200" /><meta property="og:image:height" content="630" />
@@ -246,7 +246,7 @@ TypeScript
 export const contentType = 'image/png' export default function Image() {}
 ```
 
-<head> 출력 결과
+\<head> 출력 결과
 
 ```
 <meta property="og:image:type" content="image/png" />
@@ -256,12 +256,12 @@ export const contentType = 'image/png' export default function Image() {}
 
 **opengraph-image**와 **twitter-image**는 동일한 [페이지 및 레이아웃과 같은 경로 세그먼트 구성 옵션](https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config)을 사용할 수 있는 특수화된 [경로 핸들러 (Route Handlers)](https://nextjs.org/docs/app/building-your-application/routing/route-handlers)입니다.
 
-| 옵션                                                                                                               | 타입     | 기본값          |
-| ------------------------------------------------------------------------------------------------------------------ | -------- | --------------- | -------- | -------------- | -------- | ------ |
-| [dynamic](https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic)                 | 'auto'   | 'force-dynamic' | 'error'  | 'force-static' | 'auto'   |
-| [revalidate](https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate)           | false    | 'force-cache'   | 0        | number         | false    |
-| [runtime](https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#runtime)                 | 'nodejs' | 'edge'          | 'nodejs' |
-| [preferredRegion](https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#preferredregion) | 'auto'   | 'global'        | 'home'   | string         | string[] | 'auto' |
+| 옵션                                                                                                               | 타입                                             | 기본값   |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------ | -------- |
+| [dynamic](https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic)                 | 'auto', 'force-dynamic', 'error', 'force-static' | 'auto'   |
+| [revalidate](https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate)           | false , 'force-cache', 0, number                 | false    |
+| [runtime](https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#runtime)                 | 'nodejs', 'edge'                                 | 'nodejs' |
+| [preferredRegion](https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#preferredregion) | 'auto', 'global', 'home', string, string[]       | 'auto'   |
 
 app/opengraph-image.tsx
 

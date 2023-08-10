@@ -11,16 +11,16 @@ Next.js 앱 라우터는 React와 웹 플랫폼 기반으로 구축된 새로운
 
 ## **[The `fetch()` API](https://nextjs.org/docs/app/building-your-application/data-fetching#the-fetch-api)**
 
-새로운 데이터 가져오기 시스템은 기본 **`fetch()`** 웹 API를 기반으로 구축되었으며, 서버 컴포넌트에서 **`async`**와 **`await`**를 활용합니다.
+새로운 데이터 가져오기 시스템은 기본 **`fetch()`** 웹 API를 기반으로 구축되었으며, 서버 컴포넌트에서 `async`와 `await`를 활용합니다.
 
-- React는 **`fetch`**를 확장하여 **[자동 요청 중복 처리](https://nextjs.org/docs/app/building-your-application/data-fetching#automatic-fetch-request-deduping)**을 제공합니다.
+- React는 `fetch`를 확장하여 [자동 요청 중복 처리](https://nextjs.org/docs/app/building-your-application/data-fetching#automatic-fetch-request-deduping)을 제공합니다.
 - Next.js는 **`fetch`** 옵션 객체를 확장하여 각 요청이 자체적으로 **[캐싱 및 재유효화](https://nextjs.org/docs/app/building-your-application/data-fetching/caching)** 규칙을 설정할 수 있게 합니다.
 
-Next.js에서 **`fetch`**를 사용하는 방법을 알아보겠습니다.
+Next.js에서 `fetch`를 사용하는 방법을 알아보겠습니다.
 
 ## **[서버에서 데이터 가져오기](https://nextjs.org/docs/app/building-your-application/data-fetching#fetching-data-on-the-server)**
 
-가능한 경우에는 **[서버 컴포넌트](https://nextjs.org/docs/getting-started/react-essentials#server-components)**에서 데이터를 가져오는 것을 권장합니다. 서버 컴포넌트는 항상 서버에서 데이터를 가져옵니다. 이를 통해 다음과 같은 이점을 얻을 수 있습니다:
+가능한 경우에는 [서버 컴포넌트](https://nextjs.org/docs/getting-started/react-essentials#server-components)에서 데이터를 가져오는 것을 권장합니다. 서버 컴포넌트는 항상 서버에서 데이터를 가져옵니다. 이를 통해 다음과 같은 이점을 얻을 수 있습니다:
 
 - 백엔드 데이터 리소스(예: 데이터베이스)에 직접 액세스할 수 있습니다.
 - 액세스 토큰 및 API 키와 같은 민감한 정보가 클라이언트에 노출되지 않도록하여 응용 프로그램을 보다 안전하게 유지할 수 있습니다.
@@ -37,7 +37,7 @@ Next.js에서 **`fetch`**를 사용하는 방법을 알아보겠습니다.
 
 알아두면 좋은 점: 레이아웃(layouts)에서는 부모 레이아웃과 자식 컴포넌트 간에 데이터를 전달할 수 없습니다. 동일한 데이터를 경로(route)에서 여러 번 요청하더라도 해당 데이터가 필요한 레이아웃 내에서 직접 데이터를 가져오는 것을 권장합니다. React와 Next.js는 내부적으로 요청을 [캐시하고 중복](https://nextjs.org/docs/app/building-your-application/data-fetching#automatic-fetch-request-deduping)을 제거하여 동일한 데이터가 여러 번 가져와지는 것을 피합니다.
 
-## \***\*[병렬 및 순차 데이터 가져오기](https://nextjs.org/docs/app/building-your-application/data-fetching#parallel-and-sequential-data-fetching)\*\***
+## [병렬 및 순차 데이터 가져오기](https://nextjs.org/docs/app/building-your-application/data-fetching#parallel-and-sequential-data-fetching)
 
 컴포넌트 내에서 데이터를 가져올 때, 두 가지 데이터 가져오기 패턴인 "병렬"과 "순차"에 대해 알아야 합니다.
 
@@ -88,9 +88,9 @@ fetch를 사용할 수 없는 경우, React는 수동으로 데이터를 요청 
 
 ![caching_data](https://raw.githubusercontent.com/XionWCFM/Nextjs-docs-Korean-translation/acb19c3a9378a4fe5bfaeaf0ba20124bdd5b4e67/nextjsdocs/BuildingYourApplication/DataFetching/assets/DataFetching/4.png)
 
-**Next.js 캐시**는 전역적으로 분산될 수 있는 영속적인 **[HTTP 캐시](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching)**입니다. 이는 캐시가 자동으로 확장되고 플랫폼에 따라 여러 지역에서 공유될 수 있다는 것을 의미합니다(예: **[Vercel](https://vercel.com/docs/concepts/next.js/overview)**).
+**Next.js 캐시**는 전역적으로 분산될 수 있는 영속적인 [HTTP 캐시](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching)입니다. 이는 캐시가 자동으로 확장되고 플랫폼에 따라 여러 지역에서 공유될 수 있다는 것을 의미합니다(예: **[Vercel](https://vercel.com/docs/concepts/next.js/overview)**).
 
-Next.js는 **`fetch()`** 함수의 **[옵션 객체](https://developer.mozilla.org/en-US/docs/Web/API/fetch#:~:text=preflight%20requests.-,cache,-A%20string%20indicating)**를 확장하여 각 서버 요청마다 자체적인 영속적 캐싱 동작을 설정할 수 있게 합니다. 이는 **[컴포넌트 수준의 데이터 가져오기](https://nextjs.org/docs/app/building-your-application/data-fetching#fetching-data-at-the-component-level)**와 함께 사용하여 데이터가 사용되는 곳에서 직접 캐싱을 구성할 수 있게 합니다.
+Next.js는 **`fetch()`** 함수의 [옵션 객체](https://developer.mozilla.org/en-US/docs/Web/API/fetch#:~:text=preflight%20requests.-,cache,-A%20string%20indicating)를 확장하여 각 서버 요청마다 자체적인 영속적 캐싱 동작을 설정할 수 있게 합니다. 이는 [컴포넌트 수준의 데이터 가져오기](https://nextjs.org/docs/app/building-your-application/data-fetching#fetching-data-at-the-component-level)와 함께 사용하여 데이터가 사용되는 곳에서 직접 캐싱을 구성할 수 있게 합니다.
 
 서버 렌더링 중에 Next.js는 fetch를 만나면 캐시를 확인하여 데이터가 이미 있는지 확인합니다. 데이터가 캐시에 있다면 캐시된 데이터를 반환합니다. 그렇지 않은 경우 데이터를 가져와서 향후 요청을 위해 저장합니다.
 
@@ -111,9 +111,9 @@ Next.js는 두 가지 유형의 재검증을 제공합니다:
 
 ### **[스트리밍과 Suspense](https://nextjs.org/docs/app/building-your-application/data-fetching#streaming-and-suspense)**
 
-스트리밍과 **[Suspense](https://react.dev/reference/react/Suspense)**은 새로운 React 기능으로, UI의 렌더링 단위를 점진적으로 렌더링하고 클라이언트로부터 단계적으로 스트리밍할 수 있게 해줍니다.
+스트리밍과 [Suspense](https://react.dev/reference/react/Suspense)은 새로운 React 기능으로, UI의 렌더링 단위를 점진적으로 렌더링하고 클라이언트로부터 단계적으로 스트리밍할 수 있게 해줍니다.
 
-서버 컴포넌트와 **[중첩된 레이아웃](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts)**을 사용하면 데이터가 필요하지 않은 페이지의 일부를 즉시 렌더링하고, 데이터를 가져오는 페이지의 일부에는 **[로딩 상태](https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming)**를 표시할 수 있습니다. 이는 사용자가 전체 페이지가 로드될 때까지 기다릴 필요 없이 상호작용을 시작할 수 있도록 해줍니다.
+서버 컴포넌트와 [중첩된 레이아웃](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts)을 사용하면 데이터가 필요하지 않은 페이지의 일부를 즉시 렌더링하고, 데이터를 가져오는 페이지의 일부에는 [로딩 상태](https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming)를 표시할 수 있습니다. 이는 사용자가 전체 페이지가 로드될 때까지 기다릴 필요 없이 상호작용을 시작할 수 있도록 해줍니다.
 
 ![streaming_suspense](https://raw.githubusercontent.com/XionWCFM/Nextjs-docs-Korean-translation/acb19c3a9378a4fe5bfaeaf0ba20124bdd5b4e67/nextjsdocs/BuildingYourApplication/DataFetching/assets/DataFetching/5.png)
 
@@ -121,7 +121,7 @@ Next.js는 두 가지 유형의 재검증을 제공합니다:
 
 ## **[이전 방법들](https://nextjs.org/docs/app/building-your-application/data-fetching#old-methods)**
 
-이전의 Next.js 데이터 페칭 방법인 **`getServerSideProps`**, **`getStaticProps`**, 그리고 **`getInitialProps`**은 새로운 App Router에서 **지원되지 않습니다**. 하지만 여전히 **[Pages Router](https://nextjs.org/docs/pages/building-your-application/data-fetching)**에서 사용할 수 있습니다.
+이전의 Next.js 데이터 페칭 방법인 **`getServerSideProps`**, `getStaticProps`, 그리고 `getInitialProps`은 새로운 App Router에서 **지원되지 않습니다**. 하지만 여전히 [Pages Router](https://nextjs.org/docs/pages/building-your-application/data-fetching)에서 사용할 수 있습니다.
 
 ## **[다음 단계](https://nextjs.org/docs/app/building-your-application/data-fetching#next-steps)**
 

@@ -25,7 +25,7 @@ Next.js는 파일을 평가하고 앱의 **`<head>`** 요소에 적절한 태�
 
 **`favicon.ico`** 이미지 파일을 루트 **`/app`** 경로 세그먼트에 추가하세요.
 
-<head> 출력 결과
+\<head> 출력 결과
 
 ```
 <link rel="icon" href="/favicon.ico" sizes="any" />
@@ -35,7 +35,7 @@ Next.js는 파일을 평가하고 앱의 **`<head>`** 요소에 적절한 태�
 
 **`icon.(ico|jpg|jpeg|png|svg)`** 이미지 파일을 추가하세요.
 
-<head> 출력 결과
+\<head> 출력 결과
 
 ```
 <link  rel="icon"  href="/icon?<generated>"  type="image/<generated>"  sizes="<generated>"/>
@@ -62,7 +62,7 @@ Next.js는 파일을 평가하고 앱의 **`<head>`** 요소에 적절한 태�
 
 ## **[코드를 사용하여 아이콘 생성하기 (.js, .ts, .tsx)](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/app-icons#generate-icons-using-code-js-ts-tsx)**
 
-**[literal image files](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/app-icons#image-files-ico-jpg-png)**을 사용하는 것 외에도 코드를 사용하여 아이콘을 **동적으로 생성**할 수 있습니다.
+[literal image files](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/app-icons#image-files-ico-jpg-png)을 사용하는 것 외에도 코드를 사용하여 아이콘을 **동적으로 생성**할 수 있습니다.
 
 **`icon`** 또는 **`apple-icon`** 경로를 생성하여 함수를 기본 내보내기하는 방식으로 앱 아이콘을 생성하세요.
 
@@ -71,7 +71,7 @@ Next.js는 파일을 평가하고 앱의 **`<head>`** 요소에 적절한 태�
 | icon       | .js, .ts, .tsx     |
 | apple-icon | .js, .ts, .tsx     |
 
-아이콘을 생성하는 가장 쉬운 방법은 **`next/server`**에서 제공하는 **[ImageResponse](https://nextjs.org/docs/app/api-reference/functions/image-response)** API를 사용하는 것입니다.
+아이콘을 생성하는 가장 쉬운 방법은 `next/server`에서 제공하는 **[ImageResponse](https://nextjs.org/docs/app/api-reference/functions/image-response)** API를 사용하는 것입니다.
 
 app/icon.tsx
 
@@ -118,7 +118,7 @@ export default function Icon() {
 }
 ```
 
-<head> 출력 결과
+\<head> 출력 결과
 
 ```
 <link rel="icon" href="/icon?<generated>" type="image/png" sizes="32x32" />
@@ -139,8 +139,6 @@ export default function Icon() {
 루트 세그먼트에서부터 **`icon`** 또는 **`apple-icon`** 세그먼트가 위치한 곳까지의 **[동적 경로 매개변수](https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes)** 객체를 포함하는 객체입니다.
 
 app/shop/[slug]/icon.tsx
-
-TypeScript
 
 ```
 export default function Icon({ params }: { params: { slug: string } }) {  // ...}
@@ -172,13 +170,11 @@ export default function Icon({ params }: { params: { slug: string } }) {  // ...
 
 icon.tsx / apple-icon.tsx
 
-TypeScript
-
 ```
 export const size = { width: 32, height: 32 } export default function Icon() {}
 ```
 
-<head> output
+\<head> 출력 결과
 
 ```
 <link rel="icon" sizes="32x32" />
@@ -188,13 +184,11 @@ export const size = { width: 32, height: 32 } export default function Icon() {}
 
 icon.tsx / apple-icon.tsx
 
-TypeScript
-
 ```
 export const contentType = 'image/png' export default function Icon() {}
 ```
 
-<head> 출력 결과
+\<head> 출력 결과
 
 ```
 <link rel="icon" type="image/png" />
@@ -202,14 +196,14 @@ export const contentType = 'image/png' export default function Icon() {}
 
 ### **[경로 세그먼트 구성 (Route Segment Config)](https://nextjs.org/docs/app/api-reference/file-conventions/metadata/app-icons#route-segment-config)**
 
-**`icon`**과 **`apple-icon`**은 동일한 **[페이지 및 레이아웃과 같은 경로 세그먼트 구성 옵션](https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config)**을 사용할 수 있는 특수화된 **[경로 핸들러 (Route Handlers)](https://nextjs.org/docs/app/building-your-application/routing/route-handlers)**입니다.
+`icon`과 `apple-icon`은 동일한 [페이지 및 레이아웃과 같은 경로 세그먼트 구성 옵션](https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config)을 사용할 수 있는 특수화된 [경로 핸들러 (Route Handlers)](https://nextjs.org/docs/app/building-your-application/routing/route-handlers)입니다.
 
-| 옵션                                                                                                               | 타입     | 기본값          |
-| ------------------------------------------------------------------------------------------------------------------ | -------- | --------------- | -------- | -------------- | -------- | ------ |
-| [dynamic](https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic)                 | 'auto'   | 'force-dynamic' | 'error'  | 'force-static' | 'auto'   |
-| [revalidate](https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate)           | false    | 'force-cache'   | 0        | number         | false    |
-| [runtime](https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#runtime)                 | 'nodejs' | 'edge'          | 'nodejs' |
-| [preferredRegion](https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#preferredregion) | 'auto'   | 'global'        | 'home'   | string         | string[] | 'auto' |
+| 옵션                                                                                                               | 타입                                             | 기본값   |
+| ------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------ | -------- |
+| [dynamic](https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#dynamic)                 | 'auto', 'force-dynamic', 'error', 'force-static' | 'auto'   |
+| [revalidate](https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#revalidate)           | false , 'force-cache', 0, number                 | false    |
+| [runtime](https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#runtime)                 | 'nodejs', 'edge'                                 | 'nodejs' |
+| [preferredRegion](https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config#preferredregion) | 'auto' , 'global', 'home', string, string[]      | 'auto'   |
 
 app/icon.tsx
 
