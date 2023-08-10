@@ -75,8 +75,6 @@ Next.js는 파일을 평가하고 앱의 **`<head>`** 요소에 적절한 태�
 
 app/icon.tsx
 
-TypeScript
-
 ```
 import { ImageResponse } from 'next/server'
 
