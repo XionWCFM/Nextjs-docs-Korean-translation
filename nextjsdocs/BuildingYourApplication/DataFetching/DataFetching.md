@@ -41,7 +41,7 @@ Next.js에서 **`fetch`**를 사용하는 방법을 알아보겠습니다.
 
 컴포넌트 내에서 데이터를 가져올 때, 두 가지 데이터 가져오기 패턴인 "병렬"과 "순차"에 대해 알아야 합니다.
 
-![parallel_sequential](nextjsdocs/BuildingYourApplication/DataFetching/assets/DataFetching/1.png)
+![parallel_sequential](https://raw.githubusercontent.com/XionWCFM/Nextjs-docs-Korean-translation/acb19c3a9378a4fe5bfaeaf0ba20124bdd5b4e67/nextjsdocs/BuildingYourApplication/DataFetching/assets/DataFetching/1.png)
 
 - **병렬 데이터 가져오기**는 경로(route) 내에서 요청이 즉시 시작되며 데이터를 동시에 로드합니다. 이로 인해 클라이언트-서버 폭포식 효과는 줄어들고 데이터 로드에 걸리는 총 시간이 단축됩니다.
 - **순차 데이터 가져오기**는 경로 내의 요청이 서로 종속되어 워터폴을 형성합니다. 한 번의 가져오기가 다른 결과에 의존하거나 다음 가져오기 전에 조건을 충족시키기 위해 이 패턴을 원하는 경우도 있을 수 있습니다. 그러나 이 동작은 의도하지 않게 발생하여 로딩 시간이 더 오래 걸릴 수도 있습니다.
@@ -52,7 +52,7 @@ Next.js에서 **`fetch`**를 사용하는 방법을 알아보겠습니다.
 
 트리 내에서 여러 컴포넌트에서 동일한 데이터(예: 현재 사용자)를 가져와야 하는 경우, Next.js는 동일한 입력을 가진 fetch 요청(GET)을 자동으로 임시 캐시에 저장합니다. 이 최적화를 통해 렌더링 과정에서 동일한 데이터가 여러 번 가져와지는 것을 방지합니다.
 
-![request_deduping](nextjsdocs/BuildingYourApplication/DataFetching/assets/DataFetching/2.png)
+![request_deduping](https://raw.githubusercontent.com/XionWCFM/Nextjs-docs-Korean-translation/acb19c3a9378a4fe5bfaeaf0ba20124bdd5b4e67/nextjsdocs/BuildingYourApplication/DataFetching/assets/DataFetching/2.png)
 
 - 서버에서는 캐시가 서버 요청의 수명 동안 유지되며 렌더링 프로세스가 완료될 때까지 유지됩니다.
   - 이 최적화는 레이아웃(Layouts), 페이지(Pages), 서버 컴포넌트(Server Components), generateMetadata 및 generateStaticParams에서 이루어지는 fetch 요청에 적용됩니다.
@@ -69,7 +69,7 @@ fetch를 사용할 수 없는 경우, React는 수동으로 데이터를 요청 
 - **정적 데이터**는 자주 변경되지 않는 데이터입니다. 예를 들어, 블로그 글이 있습니다.
 - **동적 데이터**는 자주 변경되거나 사용자에게 특정할 수 있는 데이터입니다. 예를 들어, 쇼핑 카트 목록이 있습니다.
 
-![static_dynamic](nextjsdocs/BuildingYourApplication/DataFetching/assets/DataFetching/3.png)
+![static_dynamic](https://raw.githubusercontent.com/XionWCFM/Nextjs-docs-Korean-translation/acb19c3a9378a4fe5bfaeaf0ba20124bdd5b4e67/nextjsdocs/BuildingYourApplication/DataFetching/assets/DataFetching/3.png)
 
 기본적으로 Next.js는 자동으로 정적 데이터 가져오기를 수행합니다. 이는 데이터가 빌드 시간에 가져와 캐시되며 각 요청마다 재사용된다는 것을 의미합니다. 개발자로서 정적 데이터가 어떻게 캐시되고 재검증되는지에 대한 제어권을 가지고 있습니다.
 
@@ -86,7 +86,7 @@ fetch를 사용할 수 없는 경우, React는 수동으로 데이터를 요청 
 
 캐싱은 데이터를 저장소(예: **[콘텐츠 전달 네트워크](https://vercel.com/docs/concepts/edge-network/overview)**)에 저장하여 각 요청마다 원본 소스에서 다시 가져오지 않아도 되는 과정입니다.
 
-![caching_data](nextjsdocs/BuildingYourApplication/DataFetching/assets/DataFetching/4.png)
+![caching_data](https://raw.githubusercontent.com/XionWCFM/Nextjs-docs-Korean-translation/acb19c3a9378a4fe5bfaeaf0ba20124bdd5b4e67/nextjsdocs/BuildingYourApplication/DataFetching/assets/DataFetching/4.png)
 
 **Next.js 캐시**는 전역적으로 분산될 수 있는 영속적인 **[HTTP 캐시](https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching)**입니다. 이는 캐시가 자동으로 확장되고 플랫폼에 따라 여러 지역에서 공유될 수 있다는 것을 의미합니다(예: **[Vercel](https://vercel.com/docs/concepts/next.js/overview)**).
 
@@ -115,7 +115,7 @@ Next.js는 두 가지 유형의 재검증을 제공합니다:
 
 서버 컴포넌트와 **[중첩된 레이아웃](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts)**을 사용하면 데이터가 필요하지 않은 페이지의 일부를 즉시 렌더링하고, 데이터를 가져오는 페이지의 일부에는 **[로딩 상태](https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming)**를 표시할 수 있습니다. 이는 사용자가 전체 페이지가 로드될 때까지 기다릴 필요 없이 상호작용을 시작할 수 있도록 해줍니다.
 
-![streaming_suspense](nextjsdocs/BuildingYourApplication/DataFetching/assets/DataFetching/5.png)
+![streaming_suspense](https://raw.githubusercontent.com/XionWCFM/Nextjs-docs-Korean-translation/acb19c3a9378a4fe5bfaeaf0ba20124bdd5b4e67/nextjsdocs/BuildingYourApplication/DataFetching/assets/DataFetching/5.png)
 
 스트리밍과 Suspense에 대해 더 알아보려면 **[로딩 UI](https://nextjs.org/docs/app/building-your-application/routing/loading-ui-and-streaming)** 및 **[스트리밍과 Suspense](https://nextjs.org/docs/app/building-your-application/data-fetching#streaming-and-suspense)** 페이지를 참조하십시오.
 
