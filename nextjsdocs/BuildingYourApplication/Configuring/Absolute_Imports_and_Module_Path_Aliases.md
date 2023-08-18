@@ -2,8 +2,6 @@
 
 공식 문서: [https://nextjs.org/docs/app/building-your-application/configuring/absolute-imports-and-module-aliases](https://nextjs.org/docs/app/building-your-application/configuring/absolute-imports-and-module-aliases)
 
-**Absolute Imports and Module Path Aliases**
-
 <details>
     <summary>Examples</summary>
     <div markdown="1">
@@ -24,7 +22,7 @@ import { Button } from '../../../components/button'
 import { Button } from '@/components/button'
 ```
 
-> 참고: **`create-next-app`**은 이러한 옵션을 구성하도록 안내할 것입니다.
+> 알아두면 좋은 정보: **`create-next-app`**은 이러한 옵션을 구성하도록 안내할 것입니다.
 > 
 
 ## **[Absolute Imports](https://nextjs.org/docs/app/building-your-application/configuring/absolute-imports-and-module-aliases#absolute-imports)**
