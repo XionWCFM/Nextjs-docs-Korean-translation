@@ -107,8 +107,8 @@ export default function HomePage() {
 
 각각의 **`"paths"`**는 **`baseUrl`** 위치를 기준으로 상대적입니다. 예를 들어:
 
+ tsconfig.json 또는 jsconfig.json
 ```json
-// tsconfig.json 또는 jsconfig.json
 {
   "compilerOptions": {
     "baseUrl": "src/",
