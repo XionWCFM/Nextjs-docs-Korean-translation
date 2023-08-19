@@ -6,7 +6,7 @@
 
 Next.js에는 이러한 문제를 해결하는 "**Draft Mode(초안 모드)**"라는 기능이 있습니다. 이를 사용하는 방법에 대한 지침은 다음과 같습니다.
 
-## [1단계: Route Handler 생성 및 접근하기](https://nextjs.org/docs/app/building-your-application/configuring/draft-mode#step-1-create-and-access-the-route-handler)
+## **1단계: Route Handler 생성 및 접근하기**
 
 먼저, **[Route Handler](https://nextjs.org/docs/app/building-your-application/routing/route-handlers)**를 생성하세요. 이 Route Handler는 어떤 이름으로든 생성할 수 있습니다. 예를 들어 **`app/api/draft/route.ts`**와 같이 생성할 수 있습니다.
 
@@ -28,7 +28,7 @@ export async function GET(request: Request) {
 
 브라우저의 개발자 도구를 사용하여 수동으로 테스트할 수 있습니다. `/api/draft`로 이동하여 브라우저의 개발자 도구를 확인하면, `__prerender_bypass`라는 이름의 쿠키를 포함한 `Set-Cookie` 응답 헤더가 보이게 됩니다.
 
-### [헤드리스 CMS에서 안전하게 액세스하기](https://nextjs.org/docs/app/building-your-application/configuring/draft-mode#securely-accessing-it-from-your-headless-cms)
+### **헤드리스 CMS에서 안전하게 접근하기**
 
 실제로는 이 Route Handler를 헤드리스 CMS에서 *안전하게* 호출하려고 할 것입니다. 구체적인 단계는 사용하는 헤드리스 CMS에 따라 다르지만, 다음은 일반적인 절차 중 일부입니다.
 
@@ -95,7 +95,7 @@ export async function GET(request: Request) {
 
 성공하면 브라우저는 초안 모드 쿠키와 함께 보고자 하는 경로로 리디렉션될 것입니다.
 
-## **[2단계: 페이지 업데이트](https://nextjs.org/docs/app/building-your-application/configuring/draft-mode#step-2-update-page)**
+## **2단계: 페이지 업데이트**
 
 다음 단계는 페이지를 업데이트하여 **`draftMode().isEnabled`**의 값을 확인하는 것입니다.
 
@@ -143,9 +143,9 @@ Terminal
 https://<your-site>/api/draft?secret=<token>&slug=<path>
 ```
 
-## **[자세한 내용](https://nextjs.org/docs/app/building-your-application/configuring/draft-mode#more-details)**
+## **자세한 내용**
 
-### **[Draft Mode 쿠키 지우기](https://nextjs.org/docs/app/building-your-application/configuring/draft-mode#clear-the-draft-mode-cookie)**
+### **Draft Mode 쿠키 지우기**
 
 기본적으로 브라우저가 닫히면 Draft Mode 세션이 종료됩니다.
 
@@ -164,7 +164,7 @@ export async function GET(request: Request) {
 
 그런 다음 **`/api/disable-draft`**로 요청을 보내어 Route Handler를 호출하세요. 만약 이 라우트를 **`[next/link](https://nextjs.org/docs/app/api-reference/components/link)`**를 사용하여 호출하는 경우, 쿠키가 무작위로 삭제되는 것을 방지하기 위해 **`prefetch={false}`**를 전달해야 합니다.
 
-### **`[next build`마다 고유한 값](https://nextjs.org/docs/app/building-your-application/configuring/draft-mode#unique-per-next-build)**
+### **`[next build`마다 고유한 값**
 
 **`next build`**를 실행할 때마다 새로운 우회 쿠키 값이 생성됩니다.
 

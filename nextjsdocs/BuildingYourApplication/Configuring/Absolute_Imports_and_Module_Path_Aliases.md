@@ -25,7 +25,7 @@ import { Button } from '@/components/button'
 > 알아두면 좋은 정보: **`create-next-app`**은 이러한 옵션을 구성하도록 안내할 것입니다.
 > 
 
-## **[Absolute Imports](https://nextjs.org/docs/app/building-your-application/configuring/absolute-imports-and-module-aliases#absolute-imports)**
+## **Absolute Imports(절대 경로 imports)**
 
 **`baseUrl`** 구성 옵션을 사용하면 프로젝트의 루트에서 직접 가져올 수 있습니다.
 
@@ -64,7 +64,7 @@ export default function HomePage() {
 }
 ```
 
-## **[Module Aliases](https://nextjs.org/docs/app/building-your-application/configuring/absolute-imports-and-module-aliases#module-aliases)**
+## **Module Aliases(모듈 별칭)**
 
 **`baseUrl`** 경로를 구성하는 것 외에도, **`"paths"`** 옵션을 사용하여 모듈 경로를 "별칭" 할 수 있습니다.
 
