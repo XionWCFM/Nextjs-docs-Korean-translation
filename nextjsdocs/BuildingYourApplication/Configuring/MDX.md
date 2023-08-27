@@ -4,7 +4,7 @@
 
 [마크다운](https://daringfireball.net/projects/markdown/syntax)은 텍스트 서식을 지정하는 가벼운 마크업 언어입니다. 이를 사용하여 일반 텍스트 구문을 작성하고 이를 구조적으로 유효한 HTML로 변환할 수 있습니다. 웹 사이트와 블로그에서 콘텐츠를 작성하는 데 자주 사용됩니다.
 
-당신이 작성하는 내용...
+작성하는 내용...
 
 ```html
 I **love** using [Next.js](https://nextjs.org/)
@@ -20,13 +20,11 @@ I **love** using [Next.js](https://nextjs.org/)
 
 Next.js는 응용 프로그램 내부에서 로컬 MDX 콘텐츠뿐만 아니라 서버에서 동적으로 가져온 원격 MDX 파일을 모두 지원할 수 있습니다. Next.js 플러그인은 마크다운과 React 컴포넌트를 HTML로 변환하며, 서버 컴포넌트(Server Components)에서도 사용할 수 있습니다(`app`의 기본 설정).
 
----
 
 ## **`[@next/mdx]`**
 
 `@next/mdx` 패키지는 프로젝트의 루트에 있는 `next.config.js` 파일에서 구성됩니다. **이 패키지는 로컬 파일에서 데이터를 가져와** `/pages` 또는 `/app` 디렉터리에서 직접 `.mdx` 확장자를 가진 페이지를 생성할 수 있게 해줍니다.
 
----
 
 ## **Getting Started(시작하기)**
 
@@ -94,8 +92,6 @@ export default function Page() {
 }
 ```
 
----
-
 ## **Remote MDX**
 
 앱의 마크다운 또는 MDX 파일이 응용 프로그램 내부에 없는 경우 서버에서 동적으로 가져올 수 있습니다. 이는 CMS나 기타 데이터 소스에서 콘텐츠를 가져올 때 유용합니다.
@@ -115,13 +111,10 @@ export default async function Home() {
 }
 ```
 
----
-
 ## **Layouts**
 
 MDX 콘텐츠 주변에 레이아웃을 공유하려면 [내장된 레이아웃 지원](https://nextjs.org/docs/app/building-your-application/routing/pages-and-layouts#layouts)과 App Router를 사용할 수 있습니다.
 
----
 
 ## **Remark and Rehype Plugins**
 
@@ -150,8 +143,6 @@ const withMDX = createMDX({
 export default withMDX(nextConfig);
 ```
 
----
-
 ## **Frontmatter**
 
 Frontmatter는 페이지에 관한 데이터를 저장하는 YAML과 유사한 키/값 쌍입니다. 그러나 `@next/mdx`는 기본적으로 frontmatter를 지원하지 **않습니다**. 그럼에도 불구하고, [gray-matter](https://github.com/jonschlinkert/gray-matter)와 같은 방법을 사용하여 MDX 콘텐츠에 frontmatter를 추가하는 방법이 있습니다.
@@ -167,8 +158,6 @@ export const meta = {
 # My MDX page
 
 ```
-
----
 
 ## **Custom Elements**
 
@@ -247,8 +236,6 @@ export default function Post(props) {
 
 사이트 전체에서 사용하는 경우 `_app.js`에 제공자를 추가하여 모든 MDX 페이지가 사용자 정의 요소 구성을 가져올 수 있도록 할 수 있습니다.
 
----
-
 ## **Deep Dive: How do you transform markdown into HTML?(심층 분석: 마크다운을 HTML로 어떻게 변환하나요?)**
 
 React는 기본적으로 마크다운을 이해하지 않습니다. 마크다운 텍스트는 먼저 HTML로 변환되어야 합니다. 이를 위해 `remark`와 `rehype`를 사용하여 변환할 수 있습니다.
@@ -279,8 +266,6 @@ async function main() {
 `remark`와 `rehype` 생태계에는 [문법 강조 표시](https://github.com/atomiks/rehype-pretty-code), [제목 링크](https://github.com/rehypejs/rehype-autolink-headings), [목차 생성](https://github.com/remarkjs/remark-toc) 등을 위한 플러그인이 포함되어 있습니다.
 
 아래에 표시된 대로 `@next/mdx`를 사용하는 경우 직접적으로 `remark` 또는 `rehype`를 사용할 필요가 **없습니다**. 이 작업은 자동으로 처리됩니다.
-
----
 
 ## **Rust 기반 MDX 컴파일러 사용(실험 중)**
 

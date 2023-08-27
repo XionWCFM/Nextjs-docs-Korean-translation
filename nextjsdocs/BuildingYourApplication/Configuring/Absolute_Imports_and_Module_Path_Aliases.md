@@ -10,7 +10,7 @@
     </div>
 </details>
 
-Next.js는 **`tsconfig.json`** 및 **`jsconfig.json`** 파일의 **`"paths"`** 및 **`"baseUrl"`** 옵션에 대한 내장 지원을 제공합니다.
+Next.js는 `tsconfig.json` 및 `jsconfig.json` 파일의 `"paths"` 및 `"baseUrl"` 옵션에 대한 내장 지원을 제공합니다.
 
 이러한 옵션을 사용하면 프로젝트 디렉토리를 절대 경로로 별칭 지정할 수 있어 모듈을 더 쉽게 가져올 수 있습니다. 예를 들어:
 
@@ -27,7 +27,7 @@ import { Button } from '@/components/button'
 
 ## **Absolute Imports(절대 경로 imports)**
 
-**`baseUrl`** 구성 옵션을 사용하면 프로젝트의 루트에서 직접 가져올 수 있습니다.
+`baseUrl` 구성 옵션을 사용하면 프로젝트의 루트에서 직접 가져올 수 있습니다.
 
 이 구성의 예시:
 
@@ -66,9 +66,9 @@ export default function HomePage() {
 
 ## **Module Aliases(모듈 별칭)**
 
-**`baseUrl`** 경로를 구성하는 것 외에도, **`"paths"`** 옵션을 사용하여 모듈 경로를 "별칭" 할 수 있습니다.
+`baseUrl` 경로를 구성하는 것 외에도, `"paths"` 옵션을 사용하여 모듈 경로를 "별칭" 할 수 있습니다.
 
-예를 들어, 다음 구성은 **`@/components/*`**을 **`components/*`**로 매핑합니다:
+예를 들어, 다음 구성은 `@/components/*`을 `components/*`로 매핑합니다:
 
 tsconfig.json or jsconfig.json
 
@@ -105,7 +105,7 @@ export default function HomePage() {
 }
 ```
 
-각각의 **`"paths"`**는 **`baseUrl`** 위치를 기준으로 상대적입니다. 예를 들어:
+각각의 `"paths"`는 `baseUrl` 위치를 기준으로 상대적입니다. 예를 들어:
 
  tsconfig.json 또는 jsconfig.json
 ```json

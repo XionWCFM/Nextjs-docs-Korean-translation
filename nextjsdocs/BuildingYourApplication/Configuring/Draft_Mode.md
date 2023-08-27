@@ -8,9 +8,9 @@ Next.js에는 이러한 문제를 해결하는 "**Draft Mode(초안 모드)**"�
 
 ## **1단계: Route Handler 생성 및 접근하기**
 
-먼저, **[Route Handler](https://nextjs.org/docs/app/building-your-application/routing/route-handlers)**를 생성하세요. 이 Route Handler는 어떤 이름으로든 생성할 수 있습니다. 예를 들어 **`app/api/draft/route.ts`**와 같이 생성할 수 있습니다.
+먼저, [Route Handler](https://nextjs.org/docs/app/building-your-application/routing/route-handlers)를 생성하세요. 이 Route Handler는 어떤 이름으로든 생성할 수 있습니다. 예를 들어 `app/api/draft/route.ts`와 같이 생성할 수 있습니다.
 
-그런 다음, **`next/headers`**에서 **`draftMode`**를 import하고 **`enable()`** 메서드를 호출하세요.
+그런 다음, `next/headers`에서 `draftMode`를 import하고 `enable()` 메서드를 호출하세요.
 
 app/api/draft/route.ts
 
@@ -36,7 +36,7 @@ export async function GET(request: Request) {
 
 **첫째**, 선택한 토큰 생성기를 사용하여 **비밀 토큰 문자열**을 생성해야 합니다. 이 비밀은 Next.js 앱과 헤드리스 CMS만이 알고 있는 비밀입니다. 이 비밀은 CMS에 액세스 권한이 없는 사람들이 초안 URL에 접근하는 것을 방지합니다.
 
-**둘째**, 헤드리스 CMS가 사용자 정의 초안 URL을 설정하는 것을 지원한다면, 다음과 같이 초안 URL로 지정합니다. 이는 Route Handler가 **`app/api/draft/route.ts`**에 위치한다고 가정합니다.
+**둘째**, 헤드리스 CMS가 사용자 정의 초안 URL을 설정하는 것을 지원한다면, 다음과 같이 초안 URL로 지정합니다. 이는 Route Handler가 `app/api/draft/route.ts`에 위치한다고 가정합니다.
 
 Terminal
 
@@ -44,17 +44,17 @@ Terminal
 https://<your-site>/api/draft?secret=<token>&slug=<path>
 ```
 
-- **`<your-site>`**는 배포 도메인을 나타내야 합니다.
-- **`<token>`**은 생성한 비밀 토큰으로 대체되어야 합니다.
-- **`<path>`**는 보고자 하는 페이지의 경로여야 합니다. 만약 **`/posts/foo`**를 보려면 **`&slug=/posts/foo`**와 같이 사용해야 합니다.
+- `<your-site>`는 배포 도메인을 나타내야 합니다.
+- `<token>`은 생성한 비밀 토큰으로 대체되어야 합니다.
+- `<path>`는 보고자 하는 페이지의 경로여야 합니다. 만약 `/posts/foo`를 보려면 `&slug=/posts/foo`와 같이 사용해야 합니다.
 
-당신의 헤드리스 CMS는 **`<path>`**를 CMS 데이터를 기반으로 동적으로 설정할 수 있는 변수를 포함할 수 있도록 허용할 수 있습니다. 예를 들어 다음과 같이 사용할 수 있습니다: **`&slug=/posts/{entry.fields.slug}`**
+당신의 헤드리스 CMS는 `<path>`를 CMS 데이터를 기반으로 동적으로 설정할 수 있는 변수를 포함할 수 있도록 허용할 수 있습니다. 예를 들어 다음과 같이 사용할 수 있습니다: `&slug=/posts/{entry.fields.slug}`
 
 **마지막으로**, Route Handler에서:
 
-- 비밀 토큰이 일치하는지와 **`slug`** 매개변수가 있는지 확인합니다 (없는 경우 요청이 실패해야 함).
-- **`draftMode.enable()`**를 호출하여 쿠키를 설정합니다.
-- 그런 다음 브라우저를 **`slug`**로 지정된 경로로 리디렉션합니다.
+- 비밀 토큰이 일치하는지와 `slug` 매개변수가 있는지 확인합니다 (없는 경우 요청이 실패해야 함).
+- `draftMode.enable()`를 호출하여 쿠키를 설정합니다.
+- 그런 다음 브라우저를 `slug`로 지정된 경로로 리디렉션합니다.
 
 app/api/draft/route.ts
 
@@ -97,11 +97,11 @@ export async function GET(request: Request) {
 
 ## **2단계: 페이지 업데이트**
 
-다음 단계는 페이지를 업데이트하여 **`draftMode().isEnabled`**의 값을 확인하는 것입니다.
+다음 단계는 페이지를 업데이트하여 `draftMode().isEnabled`의 값을 확인하는 것입니다.
 
 쿠키가 설정된 페이지를 요청하면 데이터가 **빌드 시간이 아닌 요청 시간**에 가져올 것입니다.
 
-게다가, **`isEnabled`**의 값은 **`true`**가 될 것입니다.
+게다가, `isEnabled`의 값은 `true`가 될 것입니다.
 
 app/page.tsx
 
@@ -149,7 +149,7 @@ https://<your-site>/api/draft?secret=<token>&slug=<path>
 
 기본적으로 브라우저가 닫히면 Draft Mode 세션이 종료됩니다.
 
-Draft Mode 쿠키를 수동으로 지우려면, **`draftMode().disable()`**을 호출하는 Route Handler를 생성하세요:
+Draft Mode 쿠키를 수동으로 지우려면, `draftMode().disable()`을 호출하는 Route Handler를 생성하세요:
 
 app/api/disable-draft/route.ts
 
@@ -162,11 +162,11 @@ export async function GET(request: Request) {
 }
 ```
 
-그런 다음 **`/api/disable-draft`**로 요청을 보내어 Route Handler를 호출하세요. 만약 이 라우트를 **`[next/link](https://nextjs.org/docs/app/api-reference/components/link)`**를 사용하여 호출하는 경우, 쿠키가 무작위로 삭제되는 것을 방지하기 위해 **`prefetch={false}`**를 전달해야 합니다.
+그런 다음 `/api/disable-draft`로 요청을 보내어 Route Handler를 호출하세요. 만약 이 라우트를 `[next/link](https://nextjs.org/docs/app/api-reference/components/link)`를 사용하여 호출하는 경우, 쿠키가 무작위로 삭제되는 것을 방지하기 위해 `prefetch={false}`를 전달해야 합니다.
 
-### **`[next build`마다 고유한 값**
+### **`next build`마다 고유한 값**
 
-**`next build`**를 실행할 때마다 새로운 우회 쿠키 값이 생성됩니다.
+`next build`를 실행할 때마다 새로운 우회 쿠키 값이 생성됩니다.
 
 이렇게 하면 우회 쿠키를 추측할 수 없게 됩니다.
 
