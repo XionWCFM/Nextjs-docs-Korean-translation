@@ -22,7 +22,7 @@ import { Button } from '../../../components/button'
 import { Button } from '@/components/button'
 ```
 
-> 알아두면 좋은 정보: **`create-next-app`**은 이러한 옵션을 구성하도록 안내할 것입니다.
+> 알아두면 좋은 정보: `create-next-app`은 이러한 옵션을 구성하도록 안내할 것입니다.
 > 
 
 ## **Absolute Imports(절대 경로 imports)**
@@ -70,7 +70,7 @@ export default function HomePage() {
 
 예를 들어, 다음 구성은 `@/components/*`을 `components/*`로 매핑합니다:
 
-tsconfig.json or jsconfig.json
+tsconfig.json 또는 jsconfig.json
 
 ```json
 {
