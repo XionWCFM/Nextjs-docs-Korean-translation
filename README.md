@@ -198,6 +198,9 @@
 [httpAgentOptions](./nextjsdocs/APIReference/next.config.jsOptions/httpAgentOptions.md)
 
 
+[incrementalCacheHandlerPath](./nextjsdocs/APIReference/next.config.jsOptions/incrementalCacheHandlerPath.md)
+
+
 [images](./nextjsdocs/APIReference/next.config.jsOptions/images.md)
 
 [mdxRs](./nextjsdocs/APIReference/next.config.jsOptions/mdxRs.md)
