@@ -164,6 +164,9 @@
 
 
 ### next.config.js Options
+
+[next.config.js Options](./nextjsdocs/APIReference/next.config.jsOptions/next.config.jsOptions.md)
+
 [appDir](./nextjsdocs/APIReference/next.config.jsOptions/appDir.md)
 
 [assetPrefix](./nextjsdocs/APIReference/next.config.jsOptions/assetPrefix.md)
@@ -186,7 +189,7 @@
 [generateBuildld](./nextjsdocs/APIReference/next.config.jsOptions/generateBuildld.md)
 
 
-[generateEtages](./nextjsdocs/APIReference/next.config.jsOptions/generateEtages.md)
+[generateEtags](./nextjsdocs/APIReference/next.config.jsOptions/generateEtags.md)
 
 
 [headers](./nextjsdocs/APIReference/next.config.jsOptions/headers.md)
