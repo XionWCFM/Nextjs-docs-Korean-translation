@@ -234,7 +234,7 @@
 
 [typescript](./nextjsdocs/APIReference/next.config.jsOptions/typescript.md)
 
-[urllmports](./nextjsdocs/APIReference/next.config.jsOptions/urllmports.md)
+[urlImports](./nextjsdocs/APIReference/next.config.jsOptions/urlImports.md)
 
 
 [webpack](./nextjsdocs/APIReference/next.config.jsOptions/webpack.md)
