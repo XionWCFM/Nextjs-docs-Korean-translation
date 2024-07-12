@@ -42,7 +42,7 @@ export default function Page() {
 
 **Migrating from the `pages` directory:**
 
-- 새 `useRouter` 훅은  `next/navigation`가 아니라  `next/router`에서 import 해야합니다.
+- 새 `useRouter` 훅은  `next/router`가 아니라  `next/navigation`에서 import 해야합니다.
 - pathname 문자열이 제거되면서 [`usePathname()`](./usePathname.md)으로 대체되었습니다.
 - query 객체가 제거되면서  [`useSearchParams()`](./useSeartchParams.md) 로 대체되었습니다.
 - 현재 `router.events` 는 지원되지 않습니다. [아래](#router-events)를 참조해주세요.
