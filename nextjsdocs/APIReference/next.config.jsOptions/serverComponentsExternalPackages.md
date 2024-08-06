@@ -1,4 +1,4 @@
-# 서버 컴포넌트 외부 패키지
+# serverComponentsExternalPackages
 
 공식 문서 : [https://nextjs.org/docs/app/api-reference/next-config-js/serverComponentsExternalPackages](https://nextjs.org/docs/app/api-reference/next-config-js/serverComponentsExternalPackages)
 
